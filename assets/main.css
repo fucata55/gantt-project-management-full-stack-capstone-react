@@ -1,0 +1,446 @@
+* {
+    font-family: 'Cabin', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-variant: normal;
+    color: white;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    box-sizing: border-box;
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-before: 0px;
+    -webkit-padding-after: 0px;
+    -webkit-padding-start: 0px;
+    -webkit-padding-end: 0px;
+}
+
+html {
+    background-size: cover;
+    background-color: #e9ebee;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 26.4px;
+    color: black;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-weight: 500;
+    line-height: 15.4px;
+}
+
+p {
+    font-weight: 400;
+    line-height: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+legend {
+    margin-bottom: 20px;
+}
+
+input {
+    text-align: center;
+    border-radius: 20px;
+    height: 30px;
+    padding: 10px;
+    border: 1px solid gray;
+    margin-bottom: 10px;
+    color: black;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th {
+    padding: 15px 10px;
+    text-align: left;
+}
+
+td {
+    padding: 15px 10px;
+}
+
+tr:not(:first-child) {
+    background: #1A2980;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #26D0CE, #1A2980);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #26D0CE, #1A2980);
+    border-bottom: 1px solid #26D0CE;
+}
+
+tr:nth-child(even) {
+    background: #FF8008;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #FFC837, #FF8008);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #FFC837, #FF8008);
+    border-bottom: 1px solid #FF8008;
+}
+
+td input,
+th {
+    text-align: left;
+    margin-bottom: 0px
+}
+
+select {
+    border-radius: 20px;
+    height: 30px;
+    padding: 0px 10px;
+    border: 1px solid gray;
+    color: gray;
+}
+
+button {
+    width: 120px;
+    border-radius: 20px;
+    height: 30px;
+    border: 1px solid gray;
+    margin-bottom: 10px;
+    background: #52c234;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #061700, #52c234);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #eef2f3, #52c234);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    cursor: pointer;
+}
+
+nav {
+    color: white;
+    height: 40px;
+    background: #16222A;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #3A6073, #16222A);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #3A6073, #16222A);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    padding: 5px 25px
+}
+
+nav ul {
+    text-align: justify;
+    width: 100%;
+}
+
+nav ul:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+
+nav li {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+nav img {
+    height: 30px;
+}
+
+option {
+    color: gray;
+}
+
+.table-headers {
+    background: #16222A;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #3A6073, #16222A);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #3A6073, #16222A);
+    border-bottom: 1px solid blue;
+    margin: 0px 0px 20px 0px
+}
+
+
+/*
+.project td {
+    color: black;
+}
+*/
+
+.inline-block {
+    display: inline-block;
+}
+
+.longer-input {
+    width: 300px;
+    color: gray;
+}
+
+.shorter-input {
+    width: 130px;
+    color: gray;
+}
+
+.project-order {
+    color: white;
+}
+
+.table-head-mobile {
+    display: none;
+}
+
+.center {
+    text-align: center;
+}
+
+.center h1 {
+    margin: 5px;
+}
+
+.center .project-form {
+    margin-top: 20px;
+}
+
+.project-form {
+    text-align: center;
+}
+
+.project-form input,
+.project-form button {
+    margin: 10px 5px;
+}
+
+.project-form input {
+    text-align: left;
+}
+
+.seamless-form {
+    text-align: left;
+}
+
+.seamless-form input,
+.seamless-form select {
+    background-color: transparent;
+    color: white;
+    border-color: transparent;
+    padding: 0px;
+}
+
+.a {
+    width: 25%;
+}
+
+.b {
+    width: 15%;
+}
+
+.c {
+    width: 10%;
+}
+
+.d {
+    width: 14%;
+}
+
+.e {
+    width: 11%;
+}
+
+.seamless-form input:hover,
+.seamless-form select:hover {
+    cursor: pointer;
+}
+
+.seamless-form input:focus,
+.seamless-form select:focus {
+    background-color: white;
+    color: grey;
+}
+
+.seamless-form input:focus {
+    padding: 10px;
+}
+
+.notificationBar {
+    background-color: red;
+}
+
+.mini-button {
+    width: 30px;
+    border-radius: 5px;
+}
+
+#homePage {
+    padding: 30px
+}
+
+#deleteButton,
+#deleteProjectButton {
+    background: #EB3349;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #F45C43, #EB3349);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #F45C43, #EB3349);
+}
+
+#landingPageLeftSide,
+#landingPageRightSideRegister,
+#landingPageRightSideSignin {
+    text-align: center;
+    width: 50%;
+    height: 100vh;
+    align-items: center;
+    display: flex
+}
+
+#landingPageLeftSide {
+    float: left;
+    background: #1A2980;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #26D0CE, #1A2980);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #26D0CE, #1A2980);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#landingPageRightSideRegister {
+    background: #FF8008;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #FFC837, #FF8008);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #FFC837, #FF8008);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#landingPageRightSideSignin {
+    background: #EB3349;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #F45C43, #EB3349);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #F45C43, #EB3349);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#landingPageLeftSide div {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#landingPageLeftSide a {
+    /*    How to make it align in the vertial middle?*/
+    height: 100%;
+    display: inline-block;
+}
+
+#landingPageLeftSide img {
+    height: 100px;
+}
+
+#landingPageRightSideRegister form,
+#landingPageRightSideSignin form {
+    /*    How to make it align in the vertial middle?*/
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#appDescription {
+    color: white;
+    background: #232526;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #414345, #232526);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #414345, #232526);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 35px
+}
+
+#appDescription img {
+    display: block;
+    width: 50px;
+    margin: auto;
+}
+
+.invisible-container div {
+    text-align: center;
+    margin: 5px
+}
+
+@media only screen and (max-width: 550px) {
+    #landingPageLeftSide {
+        width: 100%;
+        height: 50px;
+    }
+    #landingPageLeftSide img {
+        height: 30px;
+    }
+    #landingPageRightSideRegister,
+    #landingPageRightSideSignin {
+        width: 100%;
+    }
+    #appDescription {
+        padding: 10px;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 730px) {
+    table {
+        margin: 0px;
+    }
+    td {
+        display: block;
+    }
+    nav {
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        height: 100px;
+    }
+    nav ul {
+        height: 30px;
+        text-align: center
+    }
+    nav li {
+        display: block;
+        margin: 5px
+    }
+    .table-head-mobile {
+        display: unset;
+    }
+    .table-headers {
+        display: none;
+    }
+    #homePage {
+        padding: 0px;
+    }
+    .project-form {
+        text-align: center;
+    }
+    .project-form input,
+    .project-form button,
+    .project-form select,
+    .mini-button,
+    #deleteButton {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+    }
+    .inline-block {
+        display: unset;
+    }
+}
