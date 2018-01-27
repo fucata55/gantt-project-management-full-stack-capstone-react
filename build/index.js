@@ -68,6 +68,10 @@
 	
 	var _register2 = _interopRequireDefault(_register);
 	
+	var _signIn = __webpack_require__(549);
+	
+	var _signIn2 = _interopRequireDefault(_signIn);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var render = _reactDom2.default.render;
@@ -84,6 +88,10 @@
 	
 	document.addEventListener('DOMContentLoaded', function () {
 	    return _reactDom2.default.render(_react2.default.createElement(_register2.default, null), document.getElementById('reactRegister'));
+	});
+	
+	document.addEventListener('DOMContentLoaded', function () {
+	    return _reactDom2.default.render(_react2.default.createElement(_signIn2.default, null), document.getElementById('reactSignIn'));
 	});
 
 /***/ }),
@@ -65150,6 +65158,82 @@
 	                'a',
 	                { className: 'navigate-signin-link', href: '#' },
 	                'Click here to sign in'
+	            )
+	        )
+	    );
+	}
+
+/***/ }),
+/* 549 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.default = SignIn;
+	
+	__webpack_require__(61);
+	
+	__webpack_require__(129);
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(12);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	var _enzyme = __webpack_require__(131);
+	
+	var _enzymeAdapterReact = __webpack_require__(528);
+	
+	var _enzymeAdapterReact2 = _interopRequireDefault(_enzymeAdapterReact);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	(0, _enzyme.configure)({ adapter: new _enzymeAdapterReact2.default() });
+	
+	function SignIn(props) {
+	    return _react2.default.createElement(
+	        'div',
+	        { className: 'inline-block hideMe', id: 'landingPageRightSideSignin' },
+	        _react2.default.createElement(
+	            'form',
+	            { className: 'signin-form' },
+	            _react2.default.createElement(
+	                'h2',
+	                { className: 'hideMe', id: 'signIn' },
+	                'Sign In'
+	            ),
+	            _react2.default.createElement(
+	                'h2',
+	                { id: 'welcomeBack' },
+	                'Welcome back'
+	            ),
+	            _react2.default.createElement(
+	                'legend',
+	                { className: 'hideMe', id: 'invalidUser' },
+	                'user and password combination invalid'
+	            ),
+	            _react2.default.createElement('input', { type: 'text', id: 'signedInUser', placeholder: 'Username', value: 'demo4', required: true }),
+	            _react2.default.createElement('input', { type: 'text', id: 'signedInPassword', placeholder: 'Password', value: '1234', required: true }),
+	            _react2.default.createElement(
+	                'button',
+	                null,
+	                'Submit'
+	            ),
+	            _react2.default.createElement(
+	                'p',
+	                null,
+	                'Don\'t have an account yet?'
+	            ),
+	            _react2.default.createElement(
+	                'a',
+	                { className: 'navigate-register-link', href: '#' },
+	                'Click here to register'
 	            )
 	        )
 	    );
