@@ -1,10 +1,10 @@
 import React from 'react';
 import {shallow, mount, render} from 'enzyme';
 
-import Description from './landing-page';
+import Register from './header';
 
-describe('<Description />', () => {
+describe('<Register />', () => {
     it('Renders without crashing', () => {
-        shallow(<Description />);
+        shallow(<Register />);
                 });
     });

@@ -64,6 +64,10 @@
 	
 	var _description2 = _interopRequireDefault(_description);
 	
+	var _register = __webpack_require__(548);
+	
+	var _register2 = _interopRequireDefault(_register);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var render = _reactDom2.default.render;
@@ -76,6 +80,10 @@
 	
 	document.addEventListener('DOMContentLoaded', function () {
 	    return _reactDom2.default.render(_react2.default.createElement(_description2.default, null), document.getElementById('reactDescription'));
+	});
+	
+	document.addEventListener('DOMContentLoaded', function () {
+	    return _reactDom2.default.render(_react2.default.createElement(_register2.default, null), document.getElementById('reactRegister'));
 	});
 
 /***/ }),
@@ -65035,36 +65043,113 @@
 	        _react2.default.createElement('br', null),
 	        _react2.default.createElement(
 	            'div',
-	            { 'class': 'invisible-container' },
+	            { className: 'invisible-container' },
 	            _react2.default.createElement(
 	                'div',
-	                { 'class': 'inline-block' },
+	                { className: 'inline-block' },
 	                _react2.default.createElement('img', { src: 'assets/images/artists.PNG', alt: 'artists' }),
 	                'artists'
 	            ),
 	            _react2.default.createElement(
 	                'div',
-	                { 'class': 'inline-block' },
+	                { className: 'inline-block' },
 	                _react2.default.createElement('img', { src: 'assets/images/businessmen.png', alt: 'businessmen' }),
 	                'businessmen'
 	            ),
 	            _react2.default.createElement(
 	                'div',
-	                { 'class': 'inline-block' },
+	                { className: 'inline-block' },
 	                _react2.default.createElement('img', { src: 'assets/images/constructor.PNG', alt: 'constructors' }),
 	                'constructors'
 	            ),
 	            _react2.default.createElement(
 	                'div',
-	                { 'class': 'inline-block' },
+	                { className: 'inline-block' },
 	                _react2.default.createElement('img', { src: 'assets/images/educators.PNG', alt: 'educators' }),
 	                'educators'
 	            ),
 	            _react2.default.createElement(
 	                'div',
-	                { 'class': 'inline-block' },
+	                { className: 'inline-block' },
 	                _react2.default.createElement('img', { src: 'assets/images/IT.PNG', alt: 'IT' }),
 	                'IT'
+	            )
+	        )
+	    );
+	}
+
+/***/ }),
+/* 548 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.default = Register;
+	
+	__webpack_require__(61);
+	
+	__webpack_require__(129);
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(12);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	var _enzyme = __webpack_require__(131);
+	
+	var _enzymeAdapterReact = __webpack_require__(528);
+	
+	var _enzymeAdapterReact2 = _interopRequireDefault(_enzymeAdapterReact);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	(0, _enzyme.configure)({ adapter: new _enzymeAdapterReact2.default() });
+	
+	function Register(props) {
+	    return _react2.default.createElement(
+	        'div',
+	        { className: 'inline-block hideMe', id: 'landingPageRightSideRegister' },
+	        _react2.default.createElement(
+	            'form',
+	            { className: 'register-form' },
+	            _react2.default.createElement(
+	                'h2',
+	                null,
+	                'Register Today'
+	            ),
+	            _react2.default.createElement(
+	                'legend',
+	                { className: 'hideMe', id: 'passwordMustMatch' },
+	                'Passwords must match'
+	            ),
+	            _react2.default.createElement(
+	                'legend',
+	                { className: 'hideMe', id: 'userAlreadyExist' },
+	                'Username already existed'
+	            ),
+	            _react2.default.createElement('input', { id: 'registeredUser', type: 'text', placeholder: 'Username', required: true }),
+	            _react2.default.createElement('input', { id: 'registeredPassword', type: 'text', placeholder: 'Password', required: true }),
+	            _react2.default.createElement('input', { id: 'registeredConfirmPassword', type: 'text', placeholder: 'Confirm password', required: true }),
+	            _react2.default.createElement(
+	                'button',
+	                null,
+	                'Submit'
+	            ),
+	            _react2.default.createElement(
+	                'p',
+	                null,
+	                'Already have an account?'
+	            ),
+	            _react2.default.createElement(
+	                'a',
+	                { className: 'navigate-signin-link', href: '#' },
+	                'Click here to sign in'
 	            )
 	        )
 	    );

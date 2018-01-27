@@ -23,12 +23,12 @@ export default function Description(props) {
             <br />
             <h2>Who can use Gantt?</h2>
             <br />
-            <div class='invisible-container'>
-            <div class='inline-block'><img src="assets/images/artists.PNG" alt="artists" />artists</div>
-            <div class='inline-block'><img src="assets/images/businessmen.png" alt="businessmen" />businessmen</div>
-            <div class='inline-block'><img src="assets/images/constructor.PNG" alt="constructors" />constructors</div>
-            <div class='inline-block'><img src="assets/images/educators.PNG" alt="educators" />educators</div>
-            <div class='inline-block'><img src="assets/images/IT.PNG" alt="IT" />IT</div>
+            <div className='invisible-container'>
+            <div className='inline-block'><img src="assets/images/artists.PNG" alt="artists" />artists</div>
+            <div className='inline-block'><img src="assets/images/businessmen.png" alt="businessmen" />businessmen</div>
+            <div className='inline-block'><img src="assets/images/constructor.PNG" alt="constructors" />constructors</div>
+            <div className='inline-block'><img src="assets/images/educators.PNG" alt="educators" />educators</div>
+            <div className='inline-block'><img src="assets/images/IT.PNG" alt="IT" />IT</div>
             </div>
         </div>
     )
