@@ -60,6 +60,10 @@
 	
 	var _header2 = _interopRequireDefault(_header);
 	
+	var _description = __webpack_require__(547);
+	
+	var _description2 = _interopRequireDefault(_description);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var render = _reactDom2.default.render;
@@ -67,7 +71,11 @@
 	// import '../assets/css/main.css';
 	
 	document.addEventListener('DOMContentLoaded', function () {
-	                        return _reactDom2.default.render(_react2.default.createElement(_header2.default, null), document.getElementById('reactHeader'));
+	    return _reactDom2.default.render(_react2.default.createElement(_header2.default, null), document.getElementById('reactHeader'));
+	});
+	
+	document.addEventListener('DOMContentLoaded', function () {
+	    return _reactDom2.default.render(_react2.default.createElement(_description2.default, null), document.getElementById('reactDescription'));
 	});
 
 /***/ }),
@@ -64952,6 +64960,115 @@
 	}
 	
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ }),
+/* 547 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.default = Description;
+	
+	__webpack_require__(61);
+	
+	__webpack_require__(129);
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(12);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	var _enzyme = __webpack_require__(131);
+	
+	var _enzymeAdapterReact = __webpack_require__(528);
+	
+	var _enzymeAdapterReact2 = _interopRequireDefault(_enzymeAdapterReact);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	(0, _enzyme.configure)({ adapter: new _enzymeAdapterReact2.default() });
+	
+	function Description(props) {
+	    return _react2.default.createElement(
+	        'div',
+	        { id: 'appDescription' },
+	        _react2.default.createElement(
+	            'h2',
+	            null,
+	            'What is Gantt app?'
+	        ),
+	        _react2.default.createElement('br', null),
+	        _react2.default.createElement(
+	            'p',
+	            null,
+	            'Gantt is a project management oftware inspired by Henry Gantt to advances visual representation of porject plans. By implementing Gantt chart to your project management, you will have a better focus on the project most crucial constraint, time frame, and a greate tool to communicate your plan'
+	        ),
+	        _react2.default.createElement('br', null),
+	        _react2.default.createElement(
+	            'h2',
+	            null,
+	            'Why should I care?'
+	        ),
+	        _react2.default.createElement('br', null),
+	        _react2.default.createElement(
+	            'p',
+	            null,
+	            'As a writer called called Antoine de Saint-Exuperty who became a laureate of several of France\'s highest literary awards and a winner of the U.S. National Book Award once saif, "A goal without a plan is just a wish." Or, as the famous Founding Father of the United States, Benjamin Franklin, said "By failing to prepare, you are preparing to fail."'
+	        ),
+	        _react2.default.createElement(
+	            'p',
+	            null,
+	            'I can\'t emphasize enough how important is planning toward your goals'
+	        ),
+	        _react2.default.createElement('br', null),
+	        _react2.default.createElement(
+	            'h2',
+	            null,
+	            'Who can use Gantt?'
+	        ),
+	        _react2.default.createElement('br', null),
+	        _react2.default.createElement(
+	            'div',
+	            { 'class': 'invisible-container' },
+	            _react2.default.createElement(
+	                'div',
+	                { 'class': 'inline-block' },
+	                _react2.default.createElement('img', { src: 'assets/images/artists.PNG', alt: 'artists' }),
+	                'artists'
+	            ),
+	            _react2.default.createElement(
+	                'div',
+	                { 'class': 'inline-block' },
+	                _react2.default.createElement('img', { src: 'assets/images/businessmen.png', alt: 'businessmen' }),
+	                'businessmen'
+	            ),
+	            _react2.default.createElement(
+	                'div',
+	                { 'class': 'inline-block' },
+	                _react2.default.createElement('img', { src: 'assets/images/constructor.PNG', alt: 'constructors' }),
+	                'constructors'
+	            ),
+	            _react2.default.createElement(
+	                'div',
+	                { 'class': 'inline-block' },
+	                _react2.default.createElement('img', { src: 'assets/images/educators.PNG', alt: 'educators' }),
+	                'educators'
+	            ),
+	            _react2.default.createElement(
+	                'div',
+	                { 'class': 'inline-block' },
+	                _react2.default.createElement('img', { src: 'assets/images/IT.PNG', alt: 'IT' }),
+	                'IT'
+	            )
+	        )
+	    );
+	}
 
 /***/ })
 /******/ ]);
