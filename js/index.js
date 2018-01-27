@@ -8,6 +8,7 @@ import {Provider} from 'react-redux';
 import Header from '../js/components/header';
 import Description from '../js/components/description';
 import Register from '../js/components/register';
+import SignIn from '../js/components/sign-in';
 
 document.addEventListener('DOMContentLoaded', () =>{
     return ReactDOM.render(<Header />,document.getElementById('reactHeader'));
@@ -19,4 +20,8 @@ document.addEventListener('DOMContentLoaded', () =>{
 
 document.addEventListener('DOMContentLoaded', () =>{
     return ReactDOM.render(<Register />,document.getElementById('reactRegister'));
+} );
+
+document.addEventListener('DOMContentLoaded', () =>{
+    return ReactDOM.render(<SignIn />,document.getElementById('reactSignIn'));
 } );
