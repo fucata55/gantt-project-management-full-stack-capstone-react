@@ -56,9 +56,21 @@
 	
 	var _reactRedux = __webpack_require__(27);
 	
-	var _landingPage = __webpack_require__(60);
+	var _header = __webpack_require__(60);
+	
+	var _header2 = _interopRequireDefault(_header);
+	
+	var _landingPage = __webpack_require__(547);
 	
 	var _landingPage2 = _interopRequireDefault(_landingPage);
+	
+	var _home = __webpack_require__(548);
+	
+	var _home2 = _interopRequireDefault(_home);
+	
+	var _project = __webpack_require__(549);
+	
+	var _project2 = _interopRequireDefault(_project);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -66,18 +78,25 @@
 	
 	// import '../assets/css/main.css';
 	
-	//import Header from '../js/components/header';
 	//import Description from '../js/components/description';
 	//import Register from '../js/components/register';
 	//import SignIn from '../js/components/sign-in';
 	
 	
 	document.addEventListener('DOMContentLoaded', function () {
-	    return _reactDom2.default.render(_react2.default.createElement(Header, null), document.getElementById('reactHeader'));
+	    return _reactDom2.default.render(_react2.default.createElement(_header2.default, null), document.getElementById('reactHeader'));
 	});
 	
 	document.addEventListener('DOMContentLoaded', function () {
 	    return _reactDom2.default.render(_react2.default.createElement(_landingPage2.default, null), document.getElementById('reactLandingPage'));
+	});
+	
+	document.addEventListener('DOMContentLoaded', function () {
+	    return _reactDom2.default.render(_react2.default.createElement(_home2.default, null), document.getElementById('reactHomeSection'));
+	});
+	
+	document.addEventListener('DOMContentLoaded', function () {
+	    return _reactDom2.default.render(_react2.default.createElement(_project2.default, null), document.getElementById('reactProjectSection'));
 	});
 	
 	//document.addEventListener('DOMContentLoaded', () =>{
@@ -20656,7 +20675,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.default = Landing;
+	exports.default = Header;
 	
 	__webpack_require__(61);
 	
@@ -20680,178 +20699,44 @@
 	
 	(0, _enzyme.configure)({ adapter: new _enzymeAdapterReact2.default() });
 	
-	function Landing(props) {
+	function Header(props) {
 	    return _react2.default.createElement(
-	        'section',
-	        { id: 'landingPage', className: 'hideMe' },
+	        'header',
+	        { className: 'hideMe' },
 	        _react2.default.createElement(
-	            'div',
-	            { className: 'above-fold' },
+	            'nav',
+	            null,
 	            _react2.default.createElement(
-	                'div',
-	                { className: 'inline-block', id: 'landingPageLeftSide' },
+	                'ul',
+	                null,
 	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'inline-block' },
+	                    'li',
+	                    null,
 	                    _react2.default.createElement(
 	                        'a',
-	                        { href: '#', className: 'scroll-js' },
-	                        _react2.default.createElement('img', { src: 'assets/images/gantt-logo.png', alt: 'logo' })
+	                        { id: 'navigateHome', href: '#' },
+	                        _react2.default.createElement('img', { src: 'assets/images/gantt-logo.png', alt: 'Gantt logo' })
 	                    )
-	                )
-	            ),
-	            _react2.default.createElement(
-	                'div',
-	                { className: 'inline-block hideMe', id: 'landingPageRightSideRegister' },
+	                ),
 	                _react2.default.createElement(
-	                    'form',
-	                    { className: 'register-form' },
+	                    'li',
+	                    null,
+	                    'Hello, ',
 	                    _react2.default.createElement(
-	                        'h2',
-	                        null,
-	                        'Register Today'
+	                        'span',
+	                        { className: 'user-name' },
+	                        'Henry'
 	                    ),
-	                    _react2.default.createElement(
-	                        'legend',
-	                        { className: 'hideMe', id: 'passwordMustMatch' },
-	                        'Passwords must match'
-	                    ),
-	                    _react2.default.createElement(
-	                        'legend',
-	                        { className: 'hideMe', id: 'userAlreadyExist' },
-	                        'Username already existed'
-	                    ),
-	                    _react2.default.createElement('input', { id: 'registeredUser', type: 'text', placeholder: 'Username', required: true }),
-	                    _react2.default.createElement('input', { id: 'registeredPassword', type: 'text', placeholder: 'Password', required: true }),
-	                    _react2.default.createElement('input', { id: 'registeredConfirmPassword', type: 'text', placeholder: 'Confirm password', required: true }),
-	                    _react2.default.createElement(
-	                        'button',
-	                        null,
-	                        'Submit'
-	                    ),
-	                    _react2.default.createElement(
-	                        'p',
-	                        null,
-	                        'Already have an account?'
-	                    ),
+	                    '!'
+	                ),
+	                _react2.default.createElement(
+	                    'li',
+	                    null,
 	                    _react2.default.createElement(
 	                        'a',
-	                        { className: 'navigate-signin-link', href: '#' },
-	                        'Click here to sign in'
+	                        { id: 'signout', href: '' },
+	                        'Sign out'
 	                    )
-	                )
-	            ),
-	            _react2.default.createElement(
-	                'div',
-	                { className: 'inline-block hideMe', id: 'landingPageRightSideSignin' },
-	                _react2.default.createElement(
-	                    'form',
-	                    { className: 'signin-form' },
-	                    _react2.default.createElement(
-	                        'h2',
-	                        { className: 'hideMe', id: 'signIn' },
-	                        'Sign In'
-	                    ),
-	                    _react2.default.createElement(
-	                        'h2',
-	                        { id: 'welcomeBack' },
-	                        'Welcome back'
-	                    ),
-	                    _react2.default.createElement(
-	                        'legend',
-	                        { className: 'hideMe', id: 'invalidUser' },
-	                        'user and password combination invalid'
-	                    ),
-	                    _react2.default.createElement('input', { type: 'text', id: 'signedInUser', placeholder: 'Username', value: 'demo4', required: true }),
-	                    _react2.default.createElement('input', { type: 'text', id: 'signedInPassword', placeholder: 'Password', value: '1234', required: true }),
-	                    _react2.default.createElement(
-	                        'button',
-	                        null,
-	                        'Submit'
-	                    ),
-	                    _react2.default.createElement(
-	                        'p',
-	                        null,
-	                        'Don\'t have an account yet?'
-	                    ),
-	                    _react2.default.createElement(
-	                        'a',
-	                        { className: 'navigate-register-link', href: '#' },
-	                        'Click here to register'
-	                    )
-	                )
-	            )
-	        ),
-	        _react2.default.createElement(
-	            'div',
-	            { id: 'appDescription' },
-	            _react2.default.createElement(
-	                'h2',
-	                null,
-	                'What is Gantt app?'
-	            ),
-	            _react2.default.createElement('br', null),
-	            _react2.default.createElement(
-	                'p',
-	                null,
-	                'Gantt is a project management oftware inspired by Henry Gantt to advances visual representation of porject plans. By implementing Gantt chart to your project management, you will have a better focus on the project most crucial constraint, time frame, and a greate tool to communicate your plan'
-	            ),
-	            _react2.default.createElement('br', null),
-	            _react2.default.createElement(
-	                'h2',
-	                null,
-	                'Why should I care?'
-	            ),
-	            _react2.default.createElement('br', null),
-	            _react2.default.createElement(
-	                'p',
-	                null,
-	                'As a writer called called Antoine de Saint-Exuperty who became a laureate of several of France\'s highest literary awards and a winner of the U.S. National Book Award once saif, "A goal without a plan is just a wish." Or, as the famous Founding Father of the United States, Benjamin Franklin, said "By failing to prepare, you are preparing to fail."'
-	            ),
-	            _react2.default.createElement(
-	                'p',
-	                null,
-	                'I can\'t emphasize enough how important is planning toward your goals'
-	            ),
-	            _react2.default.createElement('br', null),
-	            _react2.default.createElement(
-	                'h2',
-	                null,
-	                'Who can use Gantt?'
-	            ),
-	            _react2.default.createElement('br', null),
-	            _react2.default.createElement(
-	                'div',
-	                { className: 'invisible-container' },
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'inline-block' },
-	                    _react2.default.createElement('img', { src: 'assets/images/artists.PNG', alt: 'artists' }),
-	                    'artists'
-	                ),
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'inline-block' },
-	                    _react2.default.createElement('img', { src: 'assets/images/businessmen.png', alt: 'businessmen' }),
-	                    'businessmen'
-	                ),
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'inline-block' },
-	                    _react2.default.createElement('img', { src: 'assets/images/constructor.PNG', alt: 'constructors' }),
-	                    'constructors'
-	                ),
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'inline-block' },
-	                    _react2.default.createElement('img', { src: 'assets/images/educators.PNG', alt: 'educators' }),
-	                    'educators'
-	                ),
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'inline-block' },
-	                    _react2.default.createElement('img', { src: 'assets/images/IT.PNG', alt: 'IT' }),
-	                    'IT'
 	                )
 	            )
 	        )
@@ -65108,6 +64993,632 @@
 	}
 	
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ }),
+/* 547 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	__webpack_require__(61);
+	
+	__webpack_require__(129);
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(12);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	var _enzyme = __webpack_require__(131);
+	
+	var _enzymeAdapterReact = __webpack_require__(528);
+	
+	var _enzymeAdapterReact2 = _interopRequireDefault(_enzymeAdapterReact);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	(0, _enzyme.configure)({ adapter: new _enzymeAdapterReact2.default() });
+	
+	var Landing = function (_React$Component) {
+	    _inherits(Landing, _React$Component);
+	
+	    function Landing(props) {
+	        _classCallCheck(this, Landing);
+	
+	        var _this = _possibleConstructorReturn(this, (Landing.__proto__ || Object.getPrototypeOf(Landing)).call(this, props));
+	
+	        _this.state = {};
+	        return _this;
+	    }
+	
+	    _createClass(Landing, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'section',
+	                { id: 'landingPage', className: 'hideMe' },
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'above-fold' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'inline-block', id: 'landingPageLeftSide' },
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'inline-block' },
+	                            _react2.default.createElement(
+	                                'a',
+	                                { href: '', className: 'scroll-js' },
+	                                _react2.default.createElement('img', { src: 'assets/images/gantt-logo.png', alt: 'logo' })
+	                            )
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'inline-block hideMe', id: 'landingPageRightSideRegister' },
+	                        _react2.default.createElement(
+	                            'form',
+	                            { className: 'register-form' },
+	                            _react2.default.createElement(
+	                                'h2',
+	                                null,
+	                                'Register Today'
+	                            ),
+	                            _react2.default.createElement(
+	                                'legend',
+	                                { className: 'hideMe', id: 'passwordMustMatch' },
+	                                'Passwords must match'
+	                            ),
+	                            _react2.default.createElement(
+	                                'legend',
+	                                { className: 'hideMe', id: 'userAlreadyExist' },
+	                                'Username already existed'
+	                            ),
+	                            _react2.default.createElement('input', { id: 'registeredUser', type: 'text', placeholder: 'Username', required: true }),
+	                            _react2.default.createElement('input', { id: 'registeredPassword', type: 'text', placeholder: 'Password', required: true }),
+	                            _react2.default.createElement('input', { id: 'registeredConfirmPassword', type: 'text', placeholder: 'Confirm password', required: true }),
+	                            _react2.default.createElement(
+	                                'button',
+	                                null,
+	                                'Submit'
+	                            ),
+	                            _react2.default.createElement(
+	                                'p',
+	                                null,
+	                                'Already have an account?'
+	                            ),
+	                            _react2.default.createElement(
+	                                'a',
+	                                { className: 'navigate-signin-link', href: '' },
+	                                'Click here to sign in'
+	                            )
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'inline-block hideMe', id: 'landingPageRightSideSignin' },
+	                        _react2.default.createElement(
+	                            'form',
+	                            { className: 'signin-form' },
+	                            _react2.default.createElement(
+	                                'h2',
+	                                { className: 'hideMe', id: 'signIn' },
+	                                'Sign In'
+	                            ),
+	                            _react2.default.createElement(
+	                                'h2',
+	                                { id: 'welcomeBack' },
+	                                'Welcome back'
+	                            ),
+	                            _react2.default.createElement(
+	                                'legend',
+	                                { className: 'hideMe', id: 'invalidUser' },
+	                                'user and password combination invalid'
+	                            ),
+	                            _react2.default.createElement('input', { type: 'text', id: 'signedInUser', placeholder: 'Username', value: 'demo4', required: true }),
+	                            _react2.default.createElement('input', { type: 'text', id: 'signedInPassword', placeholder: 'Password', value: '1234', required: true }),
+	                            _react2.default.createElement(
+	                                'button',
+	                                null,
+	                                'Submit'
+	                            ),
+	                            _react2.default.createElement(
+	                                'p',
+	                                null,
+	                                'Don\'t have an account yet?'
+	                            ),
+	                            _react2.default.createElement(
+	                                'a',
+	                                { className: 'navigate-register-link', href: '' },
+	                                'Click here to register'
+	                            )
+	                        )
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { id: 'appDescription' },
+	                    _react2.default.createElement(
+	                        'h2',
+	                        null,
+	                        'What is Gantt app?'
+	                    ),
+	                    _react2.default.createElement('br', null),
+	                    _react2.default.createElement(
+	                        'p',
+	                        null,
+	                        'Gantt is a project management oftware inspired by Henry Gantt to advances visual representation of porject plans. By implementing Gantt chart to your project management, you will have a better focus on the project most crucial constraint, time frame, and a greate tool to communicate your plan'
+	                    ),
+	                    _react2.default.createElement('br', null),
+	                    _react2.default.createElement(
+	                        'h2',
+	                        null,
+	                        'Why should I care?'
+	                    ),
+	                    _react2.default.createElement('br', null),
+	                    _react2.default.createElement(
+	                        'p',
+	                        null,
+	                        'As a writer called called Antoine de Saint-Exuperty who became a laureate of several of France\'s highest literary awards and a winner of the U.S. National Book Award once saif, "A goal without a plan is just a wish." Or, as the famous Founding Father of the United States, Benjamin Franklin, said "By failing to prepare, you are preparing to fail."'
+	                    ),
+	                    _react2.default.createElement(
+	                        'p',
+	                        null,
+	                        'I can\'t emphasize enough how important is planning toward your goals'
+	                    ),
+	                    _react2.default.createElement('br', null),
+	                    _react2.default.createElement(
+	                        'h2',
+	                        null,
+	                        'Who can use Gantt?'
+	                    ),
+	                    _react2.default.createElement('br', null),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'invisible-container' },
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'inline-block' },
+	                            _react2.default.createElement('img', { src: 'assets/images/artists.PNG', alt: 'artists' }),
+	                            'artists'
+	                        ),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'inline-block' },
+	                            _react2.default.createElement('img', { src: 'assets/images/businessmen.png', alt: 'businessmen' }),
+	                            'businessmen'
+	                        ),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'inline-block' },
+	                            _react2.default.createElement('img', { src: 'assets/images/constructor.PNG', alt: 'constructors' }),
+	                            'constructors'
+	                        ),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'inline-block' },
+	                            _react2.default.createElement('img', { src: 'assets/images/educators.PNG', alt: 'educators' }),
+	                            'educators'
+	                        ),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'inline-block' },
+	                            _react2.default.createElement('img', { src: 'assets/images/IT.PNG', alt: 'IT' }),
+	                            'IT'
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+	
+	    return Landing;
+	}(_react2.default.Component);
+	
+	exports.default = Landing;
+
+/***/ }),
+/* 548 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	__webpack_require__(61);
+	
+	__webpack_require__(129);
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(12);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	var _enzyme = __webpack_require__(131);
+	
+	var _enzymeAdapterReact = __webpack_require__(528);
+	
+	var _enzymeAdapterReact2 = _interopRequireDefault(_enzymeAdapterReact);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	(0, _enzyme.configure)({ adapter: new _enzymeAdapterReact2.default() });
+	
+	var Home = function (_React$Component) {
+	    _inherits(Home, _React$Component);
+	
+	    function Home(props) {
+	        _classCallCheck(this, Home);
+	
+	        var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
+	
+	        _this.state = {};
+	        return _this;
+	    }
+	
+	    _createClass(Home, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'section',
+	                { id: 'homePage', className: 'hideMe' },
+	                _react2.default.createElement(
+	                    'table',
+	                    { id: 'projectTable' },
+	                    _react2.default.createElement(
+	                        'thead',
+	                        null,
+	                        _react2.default.createElement(
+	                            'tr',
+	                            { className: 'table-headers' },
+	                            _react2.default.createElement(
+	                                'th',
+	                                { className: 'a' },
+	                                'Project Name'
+	                            ),
+	                            _react2.default.createElement(
+	                                'th',
+	                                { className: 'b' },
+	                                'Predeccesor'
+	                            ),
+	                            _react2.default.createElement(
+	                                'th',
+	                                { className: 'e' },
+	                                'Duration Days'
+	                            ),
+	                            _react2.default.createElement(
+	                                'th',
+	                                { className: 'd' },
+	                                'Start Date'
+	                            ),
+	                            _react2.default.createElement(
+	                                'th',
+	                                { className: 'd' },
+	                                'Finish Date'
+	                            ),
+	                            _react2.default.createElement(
+	                                'th',
+	                                null,
+	                                'Status'
+	                            )
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'tbody',
+	                        null,
+	                        _react2.default.createElement(
+	                            'tr',
+	                            null,
+	                            _react2.default.createElement(
+	                                'td',
+	                                { colSpan: '6' },
+	                                _react2.default.createElement(
+	                                    'form',
+	                                    { action: '', className: 'project-form', id: 'newProjectJS' },
+	                                    _react2.default.createElement('input', { className: 'longer-input', id: 'newProjectName', type: 'text', placeholder: 'New Pro Players Soccer game', value: true, required: true }),
+	                                    _react2.default.createElement('input', { className: 'longer-input', id: 'newProjectPredeccesor', type: 'text', placeholder: 'New Bike and Build', required: true }),
+	                                    _react2.default.createElement('input', { className: 'shorter-input', id: 'newProjectDuration', type: 'number', min: '0', placeholder: 'days', required: true }),
+	                                    _react2.default.createElement('input', { className: 'shorter-input', id: 'newProjectStart', type: 'text', placeholder: '2018-01-20', required: true }),
+	                                    _react2.default.createElement(
+	                                        'select',
+	                                        { name: 'status', id: 'status', required: true },
+	                                        _react2.default.createElement(
+	                                            'option',
+	                                            { value: 'Planning' },
+	                                            'Planning'
+	                                        ),
+	                                        _react2.default.createElement(
+	                                            'option',
+	                                            { value: 'On Going' },
+	                                            'On Going'
+	                                        ),
+	                                        _react2.default.createElement(
+	                                            'option',
+	                                            { value: 'Paused' },
+	                                            'Paused'
+	                                        ),
+	                                        _react2.default.createElement(
+	                                            'option',
+	                                            { value: 'Canceled' },
+	                                            'Canceled'
+	                                        ),
+	                                        _react2.default.createElement(
+	                                            'option',
+	                                            { value: 'Completed' },
+	                                            'Complete'
+	                                        )
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        'button',
+	                                        { type: 'submit' },
+	                                        '+ New Project'
+	                                    )
+	                                )
+	                            )
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+	
+	    return Home;
+	}(_react2.default.Component);
+	
+	exports.default = Home;
+
+/***/ }),
+/* 549 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	__webpack_require__(61);
+	
+	__webpack_require__(129);
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(12);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	var _enzyme = __webpack_require__(131);
+	
+	var _enzymeAdapterReact = __webpack_require__(528);
+	
+	var _enzymeAdapterReact2 = _interopRequireDefault(_enzymeAdapterReact);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	(0, _enzyme.configure)({ adapter: new _enzymeAdapterReact2.default() });
+	
+	var Project = function (_React$Component) {
+	    _inherits(Project, _React$Component);
+	
+	    function Project(props) {
+	        _classCallCheck(this, Project);
+	
+	        var _this = _possibleConstructorReturn(this, (Project.__proto__ || Object.getPrototypeOf(Project)).call(this, props));
+	
+	        _this.state = {};
+	        return _this;
+	    }
+	
+	    _createClass(Project, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'section',
+	                { id: 'projectSection', className: 'hideMe' },
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'center' },
+	                    _react2.default.createElement(
+	                        'h1',
+	                        null,
+	                        'Pro Players Soccer game'
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'notificationBar hideMe' },
+	                        'There\'s a task that doesn\'t match with the project time frame'
+	                    ),
+	                    _react2.default.createElement(
+	                        'form',
+	                        { action: '', className: 'project-form inline-block project-summary', id: '' },
+	                        _react2.default.createElement('input', { className: 'longer-input', id: 'projectName', type: 'text', value: '', required: true }),
+	                        _react2.default.createElement('input', { className: 'longer-input', id: 'projectPredeccesor', type: 'text', value: '', required: true }),
+	                        _react2.default.createElement('input', { className: 'shorter-input', id: 'projectDuration', type: 'text', value: '', required: true }),
+	                        _react2.default.createElement('input', { className: 'shorter-input', id: 'projectStart', type: 'text', value: '', required: true }),
+	                        _react2.default.createElement(
+	                            'select',
+	                            { name: 'status', id: 'projectStatus', required: true },
+	                            _react2.default.createElement(
+	                                'option',
+	                                { value: 'Planning' },
+	                                'Planning'
+	                            ),
+	                            _react2.default.createElement(
+	                                'option',
+	                                { value: 'On Going' },
+	                                'On Going'
+	                            ),
+	                            _react2.default.createElement(
+	                                'option',
+	                                { value: 'Paused' },
+	                                'Paused'
+	                            ),
+	                            _react2.default.createElement(
+	                                'option',
+	                                { value: 'Canceled' },
+	                                'Canceled'
+	                            ),
+	                            _react2.default.createElement(
+	                                'option',
+	                                { value: 'Complete' },
+	                                'Complete'
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            'button',
+	                            { className: 'center' },
+	                            'Save Edit'
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'button',
+	                        { id: 'deleteProjectButton' },
+	                        'Delete Project'
+	                    )
+	                ),
+	                _react2.default.createElement('div', { id: 'container' }),
+	                _react2.default.createElement(
+	                    'table',
+	                    { id: 'taskTable' },
+	                    _react2.default.createElement(
+	                        'thead',
+	                        null,
+	                        _react2.default.createElement(
+	                            'tr',
+	                            { className: 'table-headers' },
+	                            _react2.default.createElement(
+	                                'th',
+	                                { className: 'a' },
+	                                'Task Name'
+	                            ),
+	                            _react2.default.createElement(
+	                                'th',
+	                                { className: 'b' },
+	                                'Predeccesor'
+	                            ),
+	                            _react2.default.createElement(
+	                                'th',
+	                                { className: 'e' },
+	                                'Duration'
+	                            ),
+	                            _react2.default.createElement(
+	                                'th',
+	                                { className: 'd' },
+	                                'Start Date'
+	                            ),
+	                            _react2.default.createElement(
+	                                'th',
+	                                { className: 'd' },
+	                                'Finish Date'
+	                            ),
+	                            _react2.default.createElement(
+	                                'th',
+	                                null,
+	                                'Status'
+	                            )
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'tbody',
+	                        null,
+	                        _react2.default.createElement(
+	                            'tr',
+	                            null,
+	                            _react2.default.createElement(
+	                                'td',
+	                                { colSpan: '6' },
+	                                _react2.default.createElement(
+	                                    'form',
+	                                    { action: '', className: 'project-form', id: 'newTaskJS' },
+	                                    _react2.default.createElement('input', { className: 'longer-input', id: 'newTaskName', type: 'text', placeholder: 'New Pro Players Soccer game', required: true }),
+	                                    _react2.default.createElement('input', { className: 'longer-input', id: 'newTaskPredeccesor', type: 'text', placeholder: 'New Bike and Build', required: true }),
+	                                    _react2.default.createElement('input', { className: 'shorter-input', id: 'newTaskDuration', type: 'number', min: '0', placeholder: 'days', required: true }),
+	                                    _react2.default.createElement('input', { className: 'shorter-input', id: 'newTaskStart', type: 'text', placeholder: '2018-01-20', required: true }),
+	                                    _react2.default.createElement(
+	                                        'select',
+	                                        { name: 'status', id: 'newTaskStatus', required: true },
+	                                        _react2.default.createElement(
+	                                            'option',
+	                                            { value: 'Planning' },
+	                                            'Planning'
+	                                        ),
+	                                        _react2.default.createElement(
+	                                            'option',
+	                                            { value: 'On Going' },
+	                                            'On Going'
+	                                        ),
+	                                        _react2.default.createElement(
+	                                            'option',
+	                                            { value: 'Paused' },
+	                                            'Paused'
+	                                        ),
+	                                        _react2.default.createElement(
+	                                            'option',
+	                                            { value: 'Canceled' },
+	                                            'Canceled'
+	                                        ),
+	                                        _react2.default.createElement(
+	                                            'option',
+	                                            { value: 'Completed' },
+	                                            'Completed'
+	                                        )
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        'button',
+	                                        { type: 'submit' },
+	                                        '+ New Task'
+	                                    )
+	                                )
+	                            )
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+	
+	    return Project;
+	}(_react2.default.Component);
+	
+	exports.default = Project;
 
 /***/ })
 /******/ ]);

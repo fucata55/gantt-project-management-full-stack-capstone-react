@@ -89,6 +89,7 @@ let validateSignIn = (signedInUser, signedInPassword) => {
 //use variables and functions (triggers)
 
 $('.scroll-js').click(function () {
+    console.log('scroll-js trigger');
     $('html,body').animate({
         scrollTop: $('#appDescription').offset().top
     }, 'slow');
@@ -501,7 +502,7 @@ $('#projectTable').on('click', '.project', (event) => {
 
 
 
-$('.signout').click(function (event) {
+$('#signout').click(function (event) {
     event.preventDefault();
     location.reload();
 })
