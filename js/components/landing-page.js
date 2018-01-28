@@ -26,7 +26,7 @@ export default class Landing extends React.Component {
                 <div className='above-fold'>
                     <div className='inline-block' id='landingPageLeftSide'>
                         <div className='inline-block'>
-                            <a href="" className='scroll-js' onClick={() => this.scroll()}><img src="assets/images/gantt-logo.png" alt="logo" /></a>
+                            <a href="" className='scroll-js' onClick={() => this.scroll()}><img src="assets/images/gantt-logo.png" alt="logoa" /></a>
                         </div>
                     </div>
                     <div className='inline-block hideMe' id='landingPageRightSideRegister'>
