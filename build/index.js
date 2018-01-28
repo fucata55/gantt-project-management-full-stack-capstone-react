@@ -56,21 +56,9 @@
 	
 	var _reactRedux = __webpack_require__(27);
 	
-	var _header = __webpack_require__(60);
+	var _landingPage = __webpack_require__(60);
 	
-	var _header2 = _interopRequireDefault(_header);
-	
-	var _description = __webpack_require__(547);
-	
-	var _description2 = _interopRequireDefault(_description);
-	
-	var _register = __webpack_require__(548);
-	
-	var _register2 = _interopRequireDefault(_register);
-	
-	var _signIn = __webpack_require__(549);
-	
-	var _signIn2 = _interopRequireDefault(_signIn);
+	var _landingPage2 = _interopRequireDefault(_landingPage);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -78,21 +66,31 @@
 	
 	// import '../assets/css/main.css';
 	
+	//import Header from '../js/components/header';
+	//import Description from '../js/components/description';
+	//import Register from '../js/components/register';
+	//import SignIn from '../js/components/sign-in';
+	
+	
 	document.addEventListener('DOMContentLoaded', function () {
-	    return _reactDom2.default.render(_react2.default.createElement(_header2.default, null), document.getElementById('reactHeader'));
+	    return _reactDom2.default.render(_react2.default.createElement(Header, null), document.getElementById('reactHeader'));
 	});
 	
 	document.addEventListener('DOMContentLoaded', function () {
-	    return _reactDom2.default.render(_react2.default.createElement(_description2.default, null), document.getElementById('reactDescription'));
+	    return _reactDom2.default.render(_react2.default.createElement(_landingPage2.default, null), document.getElementById('reactLandingPage'));
 	});
 	
-	document.addEventListener('DOMContentLoaded', function () {
-	    return _reactDom2.default.render(_react2.default.createElement(_register2.default, null), document.getElementById('reactRegister'));
-	});
-	
-	document.addEventListener('DOMContentLoaded', function () {
-	    return _reactDom2.default.render(_react2.default.createElement(_signIn2.default, null), document.getElementById('reactSignIn'));
-	});
+	//document.addEventListener('DOMContentLoaded', () =>{
+	//    return ReactDOM.render(<Description />,document.getElementById('reactDescription'));
+	//} );
+	//
+	//document.addEventListener('DOMContentLoaded', () =>{
+	//    return ReactDOM.render(<Register />,document.getElementById('reactRegister'));
+	//} );
+	//
+	//document.addEventListener('DOMContentLoaded', () =>{
+	//    return ReactDOM.render(<SignIn />,document.getElementById('reactSignIn'));
+	//} );
 
 /***/ }),
 /* 1 */
@@ -20658,7 +20656,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.default = Header;
+	exports.default = Landing;
 	
 	__webpack_require__(61);
 	
@@ -20682,44 +20680,178 @@
 	
 	(0, _enzyme.configure)({ adapter: new _enzymeAdapterReact2.default() });
 	
-	function Header(props) {
+	function Landing(props) {
 	    return _react2.default.createElement(
-	        'header',
-	        { className: 'hideMe' },
+	        'section',
+	        { id: 'landingPage', className: 'hideMe' },
 	        _react2.default.createElement(
-	            'nav',
-	            null,
+	            'div',
+	            { className: 'above-fold' },
 	            _react2.default.createElement(
-	                'ul',
-	                null,
+	                'div',
+	                { className: 'inline-block', id: 'landingPageLeftSide' },
 	                _react2.default.createElement(
-	                    'li',
-	                    null,
+	                    'div',
+	                    { className: 'inline-block' },
 	                    _react2.default.createElement(
 	                        'a',
-	                        { id: 'navigateHome', href: '#' },
-	                        _react2.default.createElement('img', { src: 'assets/images/gantt-logo.png', alt: 'Gantt logo' })
+	                        { href: '#', className: 'scroll-js' },
+	                        _react2.default.createElement('img', { src: 'assets/images/gantt-logo.png', alt: 'logo' })
 	                    )
-	                ),
+	                )
+	            ),
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'inline-block hideMe', id: 'landingPageRightSideRegister' },
 	                _react2.default.createElement(
-	                    'li',
-	                    null,
-	                    'Hello, ',
+	                    'form',
+	                    { className: 'register-form' },
 	                    _react2.default.createElement(
-	                        'span',
-	                        { className: 'user-name' },
-	                        'Henry'
+	                        'h2',
+	                        null,
+	                        'Register Today'
 	                    ),
-	                    '!'
-	                ),
-	                _react2.default.createElement(
-	                    'li',
-	                    null,
+	                    _react2.default.createElement(
+	                        'legend',
+	                        { className: 'hideMe', id: 'passwordMustMatch' },
+	                        'Passwords must match'
+	                    ),
+	                    _react2.default.createElement(
+	                        'legend',
+	                        { className: 'hideMe', id: 'userAlreadyExist' },
+	                        'Username already existed'
+	                    ),
+	                    _react2.default.createElement('input', { id: 'registeredUser', type: 'text', placeholder: 'Username', required: true }),
+	                    _react2.default.createElement('input', { id: 'registeredPassword', type: 'text', placeholder: 'Password', required: true }),
+	                    _react2.default.createElement('input', { id: 'registeredConfirmPassword', type: 'text', placeholder: 'Confirm password', required: true }),
+	                    _react2.default.createElement(
+	                        'button',
+	                        null,
+	                        'Submit'
+	                    ),
+	                    _react2.default.createElement(
+	                        'p',
+	                        null,
+	                        'Already have an account?'
+	                    ),
 	                    _react2.default.createElement(
 	                        'a',
-	                        { id: 'signout', href: '' },
-	                        'Sign out'
+	                        { className: 'navigate-signin-link', href: '#' },
+	                        'Click here to sign in'
 	                    )
+	                )
+	            ),
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'inline-block hideMe', id: 'landingPageRightSideSignin' },
+	                _react2.default.createElement(
+	                    'form',
+	                    { className: 'signin-form' },
+	                    _react2.default.createElement(
+	                        'h2',
+	                        { className: 'hideMe', id: 'signIn' },
+	                        'Sign In'
+	                    ),
+	                    _react2.default.createElement(
+	                        'h2',
+	                        { id: 'welcomeBack' },
+	                        'Welcome back'
+	                    ),
+	                    _react2.default.createElement(
+	                        'legend',
+	                        { className: 'hideMe', id: 'invalidUser' },
+	                        'user and password combination invalid'
+	                    ),
+	                    _react2.default.createElement('input', { type: 'text', id: 'signedInUser', placeholder: 'Username', value: 'demo4', required: true }),
+	                    _react2.default.createElement('input', { type: 'text', id: 'signedInPassword', placeholder: 'Password', value: '1234', required: true }),
+	                    _react2.default.createElement(
+	                        'button',
+	                        null,
+	                        'Submit'
+	                    ),
+	                    _react2.default.createElement(
+	                        'p',
+	                        null,
+	                        'Don\'t have an account yet?'
+	                    ),
+	                    _react2.default.createElement(
+	                        'a',
+	                        { className: 'navigate-register-link', href: '#' },
+	                        'Click here to register'
+	                    )
+	                )
+	            )
+	        ),
+	        _react2.default.createElement(
+	            'div',
+	            { id: 'appDescription' },
+	            _react2.default.createElement(
+	                'h2',
+	                null,
+	                'What is Gantt app?'
+	            ),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(
+	                'p',
+	                null,
+	                'Gantt is a project management oftware inspired by Henry Gantt to advances visual representation of porject plans. By implementing Gantt chart to your project management, you will have a better focus on the project most crucial constraint, time frame, and a greate tool to communicate your plan'
+	            ),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(
+	                'h2',
+	                null,
+	                'Why should I care?'
+	            ),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(
+	                'p',
+	                null,
+	                'As a writer called called Antoine de Saint-Exuperty who became a laureate of several of France\'s highest literary awards and a winner of the U.S. National Book Award once saif, "A goal without a plan is just a wish." Or, as the famous Founding Father of the United States, Benjamin Franklin, said "By failing to prepare, you are preparing to fail."'
+	            ),
+	            _react2.default.createElement(
+	                'p',
+	                null,
+	                'I can\'t emphasize enough how important is planning toward your goals'
+	            ),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(
+	                'h2',
+	                null,
+	                'Who can use Gantt?'
+	            ),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'invisible-container' },
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'inline-block' },
+	                    _react2.default.createElement('img', { src: 'assets/images/artists.PNG', alt: 'artists' }),
+	                    'artists'
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'inline-block' },
+	                    _react2.default.createElement('img', { src: 'assets/images/businessmen.png', alt: 'businessmen' }),
+	                    'businessmen'
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'inline-block' },
+	                    _react2.default.createElement('img', { src: 'assets/images/constructor.PNG', alt: 'constructors' }),
+	                    'constructors'
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'inline-block' },
+	                    _react2.default.createElement('img', { src: 'assets/images/educators.PNG', alt: 'educators' }),
+	                    'educators'
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'inline-block' },
+	                    _react2.default.createElement('img', { src: 'assets/images/IT.PNG', alt: 'IT' }),
+	                    'IT'
 	                )
 	            )
 	        )
@@ -64976,268 +65108,6 @@
 	}
 	
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
-
-/***/ }),
-/* 547 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.default = Description;
-	
-	__webpack_require__(61);
-	
-	__webpack_require__(129);
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactDom = __webpack_require__(12);
-	
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-	
-	var _enzyme = __webpack_require__(131);
-	
-	var _enzymeAdapterReact = __webpack_require__(528);
-	
-	var _enzymeAdapterReact2 = _interopRequireDefault(_enzymeAdapterReact);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	(0, _enzyme.configure)({ adapter: new _enzymeAdapterReact2.default() });
-	
-	function Description(props) {
-	    return _react2.default.createElement(
-	        'div',
-	        { id: 'appDescription' },
-	        _react2.default.createElement(
-	            'h2',
-	            null,
-	            'What is Gantt app?'
-	        ),
-	        _react2.default.createElement('br', null),
-	        _react2.default.createElement(
-	            'p',
-	            null,
-	            'Gantt is a project management oftware inspired by Henry Gantt to advances visual representation of porject plans. By implementing Gantt chart to your project management, you will have a better focus on the project most crucial constraint, time frame, and a greate tool to communicate your plan'
-	        ),
-	        _react2.default.createElement('br', null),
-	        _react2.default.createElement(
-	            'h2',
-	            null,
-	            'Why should I care?'
-	        ),
-	        _react2.default.createElement('br', null),
-	        _react2.default.createElement(
-	            'p',
-	            null,
-	            'As a writer called called Antoine de Saint-Exuperty who became a laureate of several of France\'s highest literary awards and a winner of the U.S. National Book Award once saif, "A goal without a plan is just a wish." Or, as the famous Founding Father of the United States, Benjamin Franklin, said "By failing to prepare, you are preparing to fail."'
-	        ),
-	        _react2.default.createElement(
-	            'p',
-	            null,
-	            'I can\'t emphasize enough how important is planning toward your goals'
-	        ),
-	        _react2.default.createElement('br', null),
-	        _react2.default.createElement(
-	            'h2',
-	            null,
-	            'Who can use Gantt?'
-	        ),
-	        _react2.default.createElement('br', null),
-	        _react2.default.createElement(
-	            'div',
-	            { className: 'invisible-container' },
-	            _react2.default.createElement(
-	                'div',
-	                { className: 'inline-block' },
-	                _react2.default.createElement('img', { src: 'assets/images/artists.PNG', alt: 'artists' }),
-	                'artists'
-	            ),
-	            _react2.default.createElement(
-	                'div',
-	                { className: 'inline-block' },
-	                _react2.default.createElement('img', { src: 'assets/images/businessmen.png', alt: 'businessmen' }),
-	                'businessmen'
-	            ),
-	            _react2.default.createElement(
-	                'div',
-	                { className: 'inline-block' },
-	                _react2.default.createElement('img', { src: 'assets/images/constructor.PNG', alt: 'constructors' }),
-	                'constructors'
-	            ),
-	            _react2.default.createElement(
-	                'div',
-	                { className: 'inline-block' },
-	                _react2.default.createElement('img', { src: 'assets/images/educators.PNG', alt: 'educators' }),
-	                'educators'
-	            ),
-	            _react2.default.createElement(
-	                'div',
-	                { className: 'inline-block' },
-	                _react2.default.createElement('img', { src: 'assets/images/IT.PNG', alt: 'IT' }),
-	                'IT'
-	            )
-	        )
-	    );
-	}
-
-/***/ }),
-/* 548 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.default = Register;
-	
-	__webpack_require__(61);
-	
-	__webpack_require__(129);
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactDom = __webpack_require__(12);
-	
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-	
-	var _enzyme = __webpack_require__(131);
-	
-	var _enzymeAdapterReact = __webpack_require__(528);
-	
-	var _enzymeAdapterReact2 = _interopRequireDefault(_enzymeAdapterReact);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	(0, _enzyme.configure)({ adapter: new _enzymeAdapterReact2.default() });
-	
-	function Register(props) {
-	    return _react2.default.createElement(
-	        'div',
-	        { className: 'inline-block hideMe', id: 'landingPageRightSideRegister' },
-	        _react2.default.createElement(
-	            'form',
-	            { className: 'register-form' },
-	            _react2.default.createElement(
-	                'h2',
-	                null,
-	                'Register Today'
-	            ),
-	            _react2.default.createElement(
-	                'legend',
-	                { className: 'hideMe', id: 'passwordMustMatch' },
-	                'Passwords must match'
-	            ),
-	            _react2.default.createElement(
-	                'legend',
-	                { className: 'hideMe', id: 'userAlreadyExist' },
-	                'Username already existed'
-	            ),
-	            _react2.default.createElement('input', { id: 'registeredUser', type: 'text', placeholder: 'Username', required: true }),
-	            _react2.default.createElement('input', { id: 'registeredPassword', type: 'text', placeholder: 'Password', required: true }),
-	            _react2.default.createElement('input', { id: 'registeredConfirmPassword', type: 'text', placeholder: 'Confirm password', required: true }),
-	            _react2.default.createElement(
-	                'button',
-	                null,
-	                'Submit'
-	            ),
-	            _react2.default.createElement(
-	                'p',
-	                null,
-	                'Already have an account?'
-	            ),
-	            _react2.default.createElement(
-	                'a',
-	                { className: 'navigate-signin-link', href: '#' },
-	                'Click here to sign in'
-	            )
-	        )
-	    );
-	}
-
-/***/ }),
-/* 549 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.default = SignIn;
-	
-	__webpack_require__(61);
-	
-	__webpack_require__(129);
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactDom = __webpack_require__(12);
-	
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-	
-	var _enzyme = __webpack_require__(131);
-	
-	var _enzymeAdapterReact = __webpack_require__(528);
-	
-	var _enzymeAdapterReact2 = _interopRequireDefault(_enzymeAdapterReact);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	(0, _enzyme.configure)({ adapter: new _enzymeAdapterReact2.default() });
-	
-	function SignIn(props) {
-	    return _react2.default.createElement(
-	        'div',
-	        { className: 'inline-block hideMe', id: 'landingPageRightSideSignin' },
-	        _react2.default.createElement(
-	            'form',
-	            { className: 'signin-form' },
-	            _react2.default.createElement(
-	                'h2',
-	                { className: 'hideMe', id: 'signIn' },
-	                'Sign In'
-	            ),
-	            _react2.default.createElement(
-	                'h2',
-	                { id: 'welcomeBack' },
-	                'Welcome back'
-	            ),
-	            _react2.default.createElement(
-	                'legend',
-	                { className: 'hideMe', id: 'invalidUser' },
-	                'user and password combination invalid'
-	            ),
-	            _react2.default.createElement('input', { type: 'text', id: 'signedInUser', placeholder: 'Username', value: 'demo4', required: true }),
-	            _react2.default.createElement('input', { type: 'text', id: 'signedInPassword', placeholder: 'Password', value: '1234', required: true }),
-	            _react2.default.createElement(
-	                'button',
-	                null,
-	                'Submit'
-	            ),
-	            _react2.default.createElement(
-	                'p',
-	                null,
-	                'Don\'t have an account yet?'
-	            ),
-	            _react2.default.createElement(
-	                'a',
-	                { className: 'navigate-register-link', href: '#' },
-	                'Click here to register'
-	            )
-	        )
-	    );
-	}
 
 /***/ })
 /******/ ]);

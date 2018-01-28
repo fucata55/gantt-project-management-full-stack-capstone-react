@@ -5,23 +5,28 @@ import {Provider} from 'react-redux';
 
 // import '../assets/css/main.css';
 
-import Header from '../js/components/header';
-import Description from '../js/components/description';
-import Register from '../js/components/register';
-import SignIn from '../js/components/sign-in';
+//import Header from '../js/components/header';
+//import Description from '../js/components/description';
+//import Register from '../js/components/register';
+//import SignIn from '../js/components/sign-in';
+import Landing from '../js/components/landing-page';
 
 document.addEventListener('DOMContentLoaded', () =>{
     return ReactDOM.render(<Header />,document.getElementById('reactHeader'));
 } );
 
 document.addEventListener('DOMContentLoaded', () =>{
-    return ReactDOM.render(<Description />,document.getElementById('reactDescription'));
+    return ReactDOM.render(<Landing />,document.getElementById('reactLandingPage'));
 } );
 
-document.addEventListener('DOMContentLoaded', () =>{
-    return ReactDOM.render(<Register />,document.getElementById('reactRegister'));
-} );
-
-document.addEventListener('DOMContentLoaded', () =>{
-    return ReactDOM.render(<SignIn />,document.getElementById('reactSignIn'));
-} );
+//document.addEventListener('DOMContentLoaded', () =>{
+//    return ReactDOM.render(<Description />,document.getElementById('reactDescription'));
+//} );
+//
+//document.addEventListener('DOMContentLoaded', () =>{
+//    return ReactDOM.render(<Register />,document.getElementById('reactRegister'));
+//} );
+//
+//document.addEventListener('DOMContentLoaded', () =>{
+//    return ReactDOM.render(<SignIn />,document.getElementById('reactSignIn'));
+//} );
