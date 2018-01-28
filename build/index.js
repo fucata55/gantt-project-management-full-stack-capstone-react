@@ -65076,7 +65076,7 @@
 	                                { href: '', className: 'scroll-js', onClick: function onClick() {
 	                                        return _this2.scroll();
 	                                    } },
-	                                _react2.default.createElement('img', { src: 'assets/images/gantt-logo.png', alt: 'logo' })
+	                                _react2.default.createElement('img', { src: 'assets/images/gantt-logo.png', alt: 'logoa' })
 	                            )
 	                        )
 	                    ),
