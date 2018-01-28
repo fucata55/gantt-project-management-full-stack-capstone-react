@@ -88,13 +88,12 @@ let validateSignIn = (signedInUser, signedInPassword) => {
 
 //use variables and functions (triggers)
 
-$('.scroll-js').on('click', event => {
-    event.preventDefault();
-    console.log('scroll-js trigger');
-    $('html,body').animate({
-        scrollTop: $('#appDescription').offset().top
-    }, 'slow');
-};
+//$('.scroll-js').click(function () {
+//    console.log('scroll-js trigger');
+//    $('html,body').animate({
+//        scrollTop: $('#appDescription').offset().top
+//    }, 'slow');
+//});
 
 $('.register-form').submit(function (event) {
     //if the page refreshes when you submit the form use "preventDefault()" to force JavaScript to handle the form submission

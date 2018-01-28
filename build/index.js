@@ -65034,6 +65034,13 @@
 	
 	(0, _enzyme.configure)({ adapter: new _enzymeAdapterReact2.default() });
 	
+	var scroll = function scroll() {
+	    console.log('scroll-js trigger');
+	    $('html,body').animate({
+	        scrollTop: $('#appDescription').offset().top
+	    }, 'slow');
+	};
+	
 	var Landing = function (_React$Component) {
 	    _inherits(Landing, _React$Component);
 	
@@ -65063,7 +65070,7 @@
 	                            { className: 'inline-block' },
 	                            _react2.default.createElement(
 	                                'a',
-	                                { href: '', className: 'scroll-js' },
+	                                { href: '', className: 'scroll-js', onClick: scroll },
 	                                _react2.default.createElement('img', { src: 'assets/images/gantt-logo.png', alt: 'logo' })
 	                            )
 	                        )

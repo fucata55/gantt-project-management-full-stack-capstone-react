@@ -9,6 +9,15 @@ import Adapter from 'enzyme-adapter-react-16';
 
 configure({ adapter: new Adapter() });
 
+const scroll = () => {
+    console.log('scroll-js trigger');
+    $('html,body').animate({
+        scrollTop: $('#appDescription').offset().top
+    }, 'slow');
+};
+
+
+
 export default class Landing extends React.Component {
     constructor(props) {
         super(props);
@@ -20,7 +29,7 @@ export default class Landing extends React.Component {
                 <div className='above-fold'>
                     <div className='inline-block' id='landingPageLeftSide'>
                         <div className='inline-block'>
-                            <a href="" className='scroll-js'><img src="assets/images/gantt-logo.png" alt="logo" /></a>
+                            <a href="" className='scroll-js' onClick={scroll}><img src="assets/images/gantt-logo.png" alt="logo" /></a>
                         </div>
                     </div>
                     <div className='inline-block hideMe' id='landingPageRightSideRegister'>
