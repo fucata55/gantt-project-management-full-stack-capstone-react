@@ -88,7 +88,7 @@ let validateSignIn = (signedInUser, signedInPassword) => {
 
 //use variables and functions (triggers)
 
-$('.scroll-js').on('click', function (event) => {
+$('.scroll-js').on('click', event => {
     event.preventDefault();
     console.log('scroll-js trigger');
     $('html,body').animate({
