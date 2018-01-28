@@ -65034,13 +65034,6 @@
 	
 	(0, _enzyme.configure)({ adapter: new _enzymeAdapterReact2.default() });
 	
-	var scroll = function scroll() {
-	    console.log('scroll-js trigger');
-	    $('html,body').animate({
-	        scrollTop: $('#appDescription').offset().top
-	    }, 'slow');
-	};
-	
 	var Landing = function (_React$Component) {
 	    _inherits(Landing, _React$Component);
 	
@@ -65054,8 +65047,18 @@
 	    }
 	
 	    _createClass(Landing, [{
+	        key: 'scroll',
+	        value: function scroll() {
+	            console.log('scroll-js trigger');
+	            $('html,body').animate({
+	                scrollTop: $('#appDescription').offset().top
+	            }, 'slow');
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
+	            var _this2 = this;
+	
 	            return _react2.default.createElement(
 	                'section',
 	                { id: 'landingPage', className: 'hideMe' },
@@ -65070,7 +65073,9 @@
 	                            { className: 'inline-block' },
 	                            _react2.default.createElement(
 	                                'a',
-	                                { href: '', className: 'scroll-js', onClick: scroll },
+	                                { href: '', className: 'scroll-js', onClick: function onClick() {
+	                                        return _this2.scroll();
+	                                    } },
 	                                _react2.default.createElement('img', { src: 'assets/images/gantt-logo.png', alt: 'logo' })
 	                            )
 	                        )
