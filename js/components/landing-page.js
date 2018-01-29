@@ -8,25 +8,14 @@ import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 configure({ adapter: new Adapter() });
-//$('html,body').animate({
-//    scrollTop: $('#appDescription').offset().top
-//}, 'slow');
 
-export default class Landing extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {};
-    }
-    scroll() {
-        console.log('scroll-js trigger');
-    };
-    render() {
+export default function Landing(props) {
         return (
             <section id='landingPage' className='hideMe'>
                 <div className='above-fold'>
                     <div className='inline-block' id='landingPageLeftSide'>
                         <div className='inline-block'>
-                            <a href="" className='scroll-js' onClick={() => this.scroll()}><img src="assets/images/gantt-logo.png" alt="logoa" /></a>
+                            <a href="#" className='scroll-js'><img src="assets/images/gantt-logo.png" alt="logo" /></a>
                         </div>
                     </div>
                     <div className='inline-block hideMe' id='landingPageRightSideRegister'>
@@ -35,8 +24,8 @@ export default class Landing extends React.Component {
                             <legend className='hideMe' id='passwordMustMatch'>Passwords must match</legend>
                             <legend className='hideMe' id='userAlreadyExist'>Username already existed</legend>
                             <input id='registeredUser' type="text" placeholder='Username' required />
-                            <input id='registeredPassword' type="text" placeholder='Password' required />
-                            <input id='registeredConfirmPassword' type="text" placeholder='Confirm password' required />
+                            <input id='registeredPassword' type="password" placeholder='Password' required />
+                            <input id='registeredConfirmPassword' type="password" placeholder='Confirm password' required />
                             <button>Submit</button>
                             <p>Already have an account?</p>
                             <a className='navigate-signin-link' href="">Click here to sign in</a>
@@ -47,8 +36,8 @@ export default class Landing extends React.Component {
                             <h2 className='hideMe' id='signIn'>Sign In</h2>
                             <h2 id='welcomeBack'>Welcome back</h2>
                             <legend className='hideMe' id='invalidUser'>user and password combination invalid</legend>
-                            <input type="text" id='signedInUser' placeholder='Username' value='demo4' required />
-                            <input type="text" id='signedInPassword' placeholder='Password' value='1234' required />
+                            <input type="text" id='signedInUser' placeholder='Username' required />
+                            <input type="password" id='signedInPassword' placeholder='Password' required />
                             <button>Submit</button>
                             <p>Don't have an account yet?</p>
                             <a className='navigate-register-link' href="">Click here to register</a>
@@ -58,7 +47,7 @@ export default class Landing extends React.Component {
                 <div id='appDescription'>
                     <h2>What is Gantt app?</h2>
                     <br />
-                    <p>Gantt is a project management oftware inspired by Henry Gantt to advances visual representation of porject plans. By implementing Gantt chart to your project management, you will have a better focus on the project most crucial constraint, time frame, and a greate tool to communicate your plan</p>
+                    <p>Gantt is a project management software inspired by Henry Gantt to advances visual representation of porject plans. By implementing Gantt chart to your project management, you will have a better focus on the project most crucial constraint, time frame, and a greate tool to communicate your plan</p>
                     <br />
                     <h2>Why should I care?</h2>
                     <br />
@@ -78,4 +67,3 @@ export default class Landing extends React.Component {
             </section>
         )
     }
-}

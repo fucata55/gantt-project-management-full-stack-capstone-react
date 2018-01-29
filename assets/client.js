@@ -2,26 +2,12 @@
 let theUser
 let theProjectId
 let theProjectName
-
-let users = [
-    {
-        user: 'demo',
-        password: 'demo'
-    },
-    {
-        user: 'demo2',
-        password: 'demo2'
-    }
-];
-
-let projects = [];
 let arrayOfTasks = [];
 let arrayOfStarts = [];
 let arrayOfEnds = [];
 
-
+//validating registration with db
 let validateRegister = (username, password, confirm) => {
-    console.log(`validateRegister of user: ${username}, password: ${password}, confirm: ${confirm}`);
     $('#passwordMustMatch').hide();
     $('#userAlreadyExist').hide();
     if (password !== confirm) {
@@ -58,6 +44,7 @@ let validateRegister = (username, password, confirm) => {
     }
 }
 
+//validating sign with db
 let validateSignIn = (signedInUser, signedInPassword) => {
     const userData = {
         username: signedInUser,
@@ -86,16 +73,221 @@ let validateSignIn = (signedInUser, signedInPassword) => {
         });
 }
 
+//requesting db for a project
+let getAProject = projectId => {
+    $.ajax({
+        type: 'GET',
+        url: 'https://gantt-project-management.herokuapp.com/user/project/' + projectId
+    })
+        .done(project => {
+        console.log(project);
+        theProjectName = project[0].projectName
+        $('#projectSection h1').text(theProjectName)
+        showChart();
+
+    })
+        .fail((jqXHR, error, errorThrown) => {
+        console.log(jqXHR);
+        console.log(error);
+        console.log(errorThrown);
+    });
+}
+
+//requesting db for a user's project(s)
+let getProjects = username => {
+    $('.project').remove();
+    $.ajax({
+        type: 'GET',
+        url: 'https://gantt-project-management.herokuapp.com/user/project/all/' + username
+    })
+        .done(projects => {
+        projects.forEach(project => renderAProject(project))
+
+    })
+        .fail((jqXHR, error, errorThrown) => {
+        console.log(jqXHR);
+        console.log(error);
+        console.log(errorThrown);
+    });
+}
+
+//requesting db for a project's task(s)
+let getTasks = projectId => {
+    $('.task-row').remove();
+    arrayOfTasks = [];
+    arrayOfStarts = [];
+    arrayOfEnds = [];
+    $.ajax({
+        type: 'GET',
+        url: 'https://gantt-project-management.herokuapp.com/user/project/task/all/' + theProjectId
+    })
+        .done(tasks => {
+        console.log('getTasks successful', tasks)
+        tasks.forEach(task => {
+            console.log(task, task.taskName);
+            renderATask(task);
+            arrayOfTasks.push(task.taskName);
+            arrayOfStarts.push(task.taskStart);
+            arrayOfEnds.push(task.taskEnd);
+        })
+        showChart(theProjectId);
+    })
+        .fail((jqXHR, error, errorThrown) => {
+        console.log(jqXHR);
+        console.log(error);
+        console.log(errorThrown);
+    });
+}
+
+//displaying a project in home page
+let renderAProject = (project) => {
+    $('#projectTable tr:last').after(`
+<tr class='project' id='${project._id}'>
+<td class='project-name'><span class='table-head-mobile'>Project Name: </span>${project.projectName}</td>
+<td class='project-predeccesor'><span class='table-head-mobile'>Predecessor: </span>${project.projectPredeccesor}</td>
+<td class='project-duration'><span class='table-head-mobile'>Duration: </span>${project.projectDuration}</td>
+<td class='project-start'><span class='table-head-mobile'>Start Date: </span>${project.projectStart}</td>
+<td class='project-end'><span class='table-head-mobile'>Finish Date: </span>${project.projectEnd}</td>
+<td class='project-status'> <span class='table-head-mobile'>Status: </span>${project.projectStatus}</td>
+</tr>
+`)
+}
+
+//displaying a task in project page
+let renderATask = (newTask) => {
+    //    console.log(`renderATask ran. the new task is ${newTask.taskName}, ${newTask.taskPredeccesor}, ${newTask.taskStatus}`);
+    $('#taskTable tr:last').after(`
+<tr class='task-row'>
+<td colspan='7'>
+<form action="" class='project-form seamless-form task' id='${newTask._id}'>
+<input class="longer-input a task-name" type="text" value='${newTask.taskName}' required>
+<input class="longer-input b task-predeccesor" type="text" value='${newTask.taskPredeccesor}' required>
+<input class="shorter-input c task-duration" type="text" value='${newTask.taskDuration}' required>
+<input class="shorter-input d task-start" type="text" value='${newTask.taskStart}' required>
+<input class="shorter-input d task-end" type="text" value='${newTask.taskEnd}' readonly>
+<select name="status" class='task-status' required>
+<option value="Planning">Planning</option>
+<option value="On Going">On Going</option>
+<option value="Paused">Paused</option>
+<option value="Canceled">Canceled</option>
+<option value="Completed">Completed</option>
+</select>
+<button class='mini-button edit-task-button'><img src="assets/images/edit-icon.png" alt=""></button>
+<button class='mini-button delete-task-button' id='deleteButton'><img src="assets/images/trash-icon.png" alt="trash"></button>
+</form>
+</td>
+</tr>
+`);
+    $('#taskTable tr:last').find('select').val(newTask.taskStatus);
+}
+
+//populating project summary at project summary form
+let populateProjectSummary = (project) => {
+    $.ajax({
+        method: 'GET',
+        url: 'https://gantt-project-management.herokuapp.com/user/project/' + project
+    })
+        .done(project => {
+        //            console.log('populateProjectSummary ran', project[0]);
+        theProjectName = project[0].projectName
+        $('#projectSection h1').text(project[0].projectName);
+        $('.project-summary').attr('id', project[0]._id);
+        $('#projectName').val(project[0].projectName);
+        $('#projectPredeccesor').val(project[0].projectPredeccesor);
+        $('#projectDuration').val(project[0].projectDuration);
+        $('#projectStart').val(project[0].projectStart);
+        $('#projectEnd').val(project[0].projectEnd);
+        $('#projectStatus').val(project[0].projectStatus);
+    })
+        .fail(function (jqXHR, error, errorThrown) {
+        console.log(jqXHR);
+        console.log(error);
+        console.log(errorThrown);
+    });
+}
+
+//generating gantt chart
+let showChart = () => {
+    //console.log('showChart ran', theProject);
+    //console.log(arrayOfTasks, arrayOfStarts, arrayOfEnds)
+    $('#container').empty();
+    let arrayOfPeriods = [];
+    for (let i = 0; i < arrayOfTasks.length; i++) {
+        let [yyyy, dd, mm] = arrayOfStarts[i].split('/').reverse().map(string => parseInt(string));
+        let [yyyy2, dd2, mm2] = arrayOfEnds[i].split('/').reverse().map(string => parseInt(string));
+        let monthOne = mm - 1;
+        let monthTwo = mm2 - 1
+        console.log(i, yyyy, monthOne, dd, yyyy2, monthTwo, dd2)
+        arrayOfPeriods.push({
+            x: Date.UTC(yyyy, monthOne, dd),
+            x2: Date.UTC(yyyy2, monthTwo, dd2),
+            y: i
+        })
+    };
+    Highcharts.chart('container', {
+
+        chart: {
+            type: 'xrange'
+        },
+        title: {
+            text: theProjectName
+        },
+        xAxis: {
+            type: 'datetime'
+        },
+        yAxis: {
+            title: {
+                text: ''
+            },
+            categories: arrayOfTasks,
+            reversed: true
+        },
+        series: [{
+            //name: 'Project 1',
+            // pointPadding: 0,
+            // groupPadding: 0,
+            borderColor: 'gray',
+            pointWidth: 20,
+            data: arrayOfPeriods,
+            dataLabels: {
+                enabled: false
+            }
+        }]
+    })
+};
+
+//deleting a project
+let deleteProject = projectIdToDelete => {
+    $.ajax({
+        type: 'DELETE',
+        url: 'https://gantt-project-management.herokuapp.com/user/project/' + projectIdToDelete
+    })
+        .done(() => {
+        console.log(`project ${projectIdToDelete} is successfully deleted`);
+        $('.hideMe').hide();
+        getProjects(theUser);
+        $('#homePage').show();
+        $('header').show();
+    })
+        .fail(function (jqXHR, error, errorThrown) {
+        console.log(jqXHR);
+        console.log(error);
+        console.log(errorThrown);
+    });
+}
+
+
 //use variables and functions (triggers)
 
-//$('.scroll-js').click(function () {
-//    console.log('scroll-js trigger');
-//    $('html,body').animate({
-//        scrollTop: $('#appDescription').offset().top
-//    }, 'slow');
-//});
+//scrolling
+$(document).on('click', '.scroll-js', function () {
+    $('html,body').animate({
+        scrollTop: $('#appDescription').offset().top
+    }, 'slow');
+});
 
-$('.register-form').submit(function (event) {
+//registering
+$(document).on('submit', '.register-form', function (event) {
     //if the page refreshes when you submit the form use "preventDefault()" to force JavaScript to handle the form submission
     event.preventDefault();
     let registeredUser = $('#registeredUser').val();
@@ -104,20 +296,17 @@ $('.register-form').submit(function (event) {
     validateRegister(registeredUser, registeredPassword, registeredConfirmPassword)
 })
 
-$('.signin-form').submit(function (event) {
+//signing in
+$(document).on('submit', '.signin-form',function (event) {
     event.preventDefault();
     let signedInUser = $('#signedInUser').val();
     let signedInPassword = $('#signedInPassword').val();
     validateSignIn(signedInUser, signedInPassword);
 })
 
-//create new project
-$('#newProjectJS').submit(function (event) {
+//creating new project
+$(document).on('submit', '#newProjectJS', function (event) {
     event.preventDefault();
-    console.log('new project button triggers');
-    console.log(
-        $('#newProjectName').val()
-    );
     let newProjectStart = $('#newProjectStart').val();
     let date = new Date(newProjectStart);
     let newProjectEnd = new Date(date);
@@ -161,7 +350,8 @@ $('#newProjectJS').submit(function (event) {
         });
 })
 
-$('#newTaskJS').submit(event => {
+//creating new task
+$(document).on('submit', '#newTaskJS', event => {
     event.preventDefault();
     console.log('new task button triggers');
     console.log(
@@ -212,137 +402,8 @@ $('#newTaskJS').submit(event => {
         });
 })
 
-let getAProject = projectId => {
-    $.ajax({
-            type: 'GET',
-            url: 'https://gantt-project-management.herokuapp.com/user/project/' + projectId
-        })
-        .done(project => {
-            console.log(project);
-            theProjectName = project[0].projectName
-            $('#projectSection h1').text(theProjectName)
-            showChart();
-
-        })
-        .fail((jqXHR, error, errorThrown) => {
-            console.log(jqXHR);
-            console.log(error);
-            console.log(errorThrown);
-        });
-}
-
-let getProjects = username => {
-    $('.project').remove();
-    $.ajax({
-            type: 'GET',
-            url: 'https://gantt-project-management.herokuapp.com/user/project/all/' + username
-        })
-        .done(projects => {
-            projects.forEach(project => renderAProject(project))
-
-        })
-        .fail((jqXHR, error, errorThrown) => {
-            console.log(jqXHR);
-            console.log(error);
-            console.log(errorThrown);
-        });
-}
-
-let getTasks = projectId => {
-    $('.task-row').remove();
-    arrayOfTasks = [];
-    arrayOfStarts = [];
-    arrayOfEnds = [];
-    $.ajax({
-            type: 'GET',
-            url: 'https://gantt-project-management.herokuapp.com/user/project/task/all/' + theProjectId
-        })
-        .done(tasks => {
-            console.log('getTasks successful', tasks)
-            tasks.forEach(task => {
-                console.log(task, task.taskName);
-                renderATask(task);
-                arrayOfTasks.push(task.taskName);
-                arrayOfStarts.push(task.taskStart);
-                arrayOfEnds.push(task.taskEnd);
-            })
-            showChart(theProjectId);
-        })
-        .fail((jqXHR, error, errorThrown) => {
-            console.log(jqXHR);
-            console.log(error);
-            console.log(errorThrown);
-        });
-}
-
-let renderAProject = (project) => {
-    $('#projectTable tr:last').after(`
-            <tr class='project' id='${project._id}'>
-                <td class='project-name'><span class='table-head-mobile'>Project Name: </span>${project.projectName}</td>
-                <td class='project-predeccesor'><span class='table-head-mobile'>Predecessor: </span>${project.projectPredeccesor}</td>
-                <td class='project-duration'><span class='table-head-mobile'>Duration: </span>${project.projectDuration}</td>
-                <td class='project-start'><span class='table-head-mobile'>Start Date: </span>${project.projectStart}</td>
-                <td class='project-end'><span class='table-head-mobile'>Finish Date: </span>${project.projectEnd}</td>
-                <td class='project-status'> <span class='table-head-mobile'>Status: </span>${project.projectStatus}</td>
-            </tr>
-        `)
-}
-
-let renderATask = (newTask) => {
-    //    console.log(`renderATask ran. the new task is ${newTask.taskName}, ${newTask.taskPredeccesor}, ${newTask.taskStatus}`);
-    $('#taskTable tr:last').after(`
-    <tr class='task-row'>
-        <td colspan='7'>
-            <form action="" class='project-form seamless-form task' id='${newTask._id}'>
-                    <input class="longer-input a task-name" type="text" value='${newTask.taskName}' required>
-                    <input class="longer-input b task-predeccesor" type="text" value='${newTask.taskPredeccesor}' required>
-                    <input class="shorter-input c task-duration" type="text" value='${newTask.taskDuration}' required>
-                    <input class="shorter-input d task-start" type="text" value='${newTask.taskStart}' required>
-                    <input class="shorter-input d task-end" type="text" value='${newTask.taskEnd}' readonly>
-                    <select name="status" class='task-status' required>
-                        <option value="Planning">Planning</option>
-                        <option value="On Going">On Going</option>
-                        <option value="Paused">Paused</option>
-                        <option value="Canceled">Canceled</option>
-                        <option value="Completed">Completed</option>
-                    </select>
-<button class='mini-button edit-task-button'><img src="assets/images/edit-icon.png" alt=""></button>
-<button class='mini-button delete-task-button' id='deleteButton'><img src="assets/images/trash-icon.png" alt="trash"></button>
-            </form>
-        </td>
-    </tr>
-`);
-    $('#taskTable tr:last').find('select').val(newTask.taskStatus);
-}
-
-//populate project summary at project summary form
-let populateProjectSummary = (project) => {
-    $.ajax({
-            method: 'GET',
-            url: 'https://gantt-project-management.herokuapp.com/user/project/' + project
-        })
-        .done(project => {
-            //            console.log('populateProjectSummary ran', project[0]);
-            theProjectName = project[0].projectName
-            $('#projectSection h1').text(project[0].projectName);
-            $('.project-summary').attr('id', project[0]._id);
-            $('#projectName').val(project[0].projectName);
-            $('#projectPredeccesor').val(project[0].projectPredeccesor);
-            $('#projectDuration').val(project[0].projectDuration);
-            $('#projectStart').val(project[0].projectStart);
-            $('#projectEnd').val(project[0].projectEnd);
-            $('#projectStatus').val(project[0].projectStatus);
-        })
-        .fail(function (jqXHR, error, errorThrown) {
-            console.log(jqXHR);
-            console.log(error);
-            console.log(errorThrown);
-        });
-}
-
-
-//update project
-$('.project-summary').submit(function (event) {
+//updating a project
+$(document).on('submit', '.project-summary', function (event) {
     event.preventDefault();
     console.log('project summary button triggers');
     console.log(
@@ -393,92 +454,16 @@ $('.project-summary').submit(function (event) {
         });
 })
 
-let showChart = () => {
-    //console.log('showChart ran', theProject);
-    //console.log(arrayOfTasks, arrayOfStarts, arrayOfEnds)
-    $('#container').empty();
-    let arrayOfPeriods = [];
-    for (let i = 0; i < arrayOfTasks.length; i++) {
-        let [yyyy, dd, mm] = arrayOfStarts[i].split('/').reverse().map(string => parseInt(string));
-        let [yyyy2, dd2, mm2] = arrayOfEnds[i].split('/').reverse().map(string => parseInt(string));
-        let monthOne = mm - 1;
-        let monthTwo = mm2 - 1
-        console.log(i, yyyy, monthOne, dd, yyyy2, monthTwo, dd2)
-        arrayOfPeriods.push({
-            x: Date.UTC(yyyy, monthOne, dd),
-            x2: Date.UTC(yyyy2, monthTwo, dd2),
-            y: i
-        })
-    };
-    Highcharts.chart('container', {
-
-        chart: {
-            type: 'xrange'
-        },
-        title: {
-            text: theProjectName
-        },
-        xAxis: {
-            type: 'datetime'
-        },
-        yAxis: {
-            title: {
-                text: ''
-            },
-            categories: arrayOfTasks,
-            reversed: true
-        },
-        series: [{
-            //name: 'Project 1',
-            // pointPadding: 0,
-            // groupPadding: 0,
-            borderColor: 'gray',
-            pointWidth: 20,
-            data: arrayOfPeriods,
-            dataLabels: {
-                enabled: false
-            }
-            }]
-    })
-};
-
-let deleteProject = projectIdToDelete => {
-    $.ajax({
-            type: 'DELETE',
-            url: 'https://gantt-project-management.herokuapp.com/user/project/' + projectIdToDelete
-        })
-        .done(() => {
-            console.log(`project ${projectIdToDelete} is successfully deleted`);
-            $('.hideMe').hide();
-            getProjects(theUser);
-            $('#homePage').show();
-            $('header').show();
-        })
-        .fail(function (jqXHR, error, errorThrown) {
-            console.log(jqXHR);
-            console.log(error);
-            console.log(errorThrown);
-        });
-}
-
-//document ready trigger
-$(function () {
-    $('.hideMe').hide();
-    $('#landingPage').show();
-    $('#landingPageRightSideRegister').show();
-    $('#newProjectStart').datepicker();
-    $('#newTaskStart').datepicker();
-    $('.task-start').datepicker();
-})
-
-$('.navigate-register-link').click(function (event) {
+//navigating to register section
+$(document).on('click', '.navigate-register-link', function (event) {
     event.preventDefault();
     $('.hideMe').hide();
     $('#landingPage').show();
     $('#landingPageRightSideRegister').show()
 });
 
-$('.navigate-signin-link').click(function (event) {
+//navigating to sign in section
+$(document).on('click', '.navigate-signin-link', function (event) {
     event.preventDefault();
     $('.hideMe').hide();
     $('#landingPage').show();
@@ -486,7 +471,8 @@ $('.navigate-signin-link').click(function (event) {
     $('#landingPageRightSideSignin').show()
 })
 
-$('#projectTable').on('click', '.project', (event) => {
+//navigating to project page
+$(document).on('click', '.project', (event) => {
     //    console.log('project trigger works');
     event.preventDefault();
     let selectedProjectId = $(event.target).closest('.project').attr('id');
@@ -500,14 +486,14 @@ $('#projectTable').on('click', '.project', (event) => {
     $('header').show()
 });
 
-
-
-$('#signout').click(function (event) {
+//signing out
+$(document).on('click', '#signout', function (event) {
     event.preventDefault();
     location.reload();
 })
 
-$('#navigateHome').click(function (event) {
+//navigating to home
+$(document).on('click', '#navigateHome', function (event) {
     event.preventDefault();
     $('.hideMe').hide();
     getProjects(theUser);
@@ -515,7 +501,8 @@ $('#navigateHome').click(function (event) {
     $('header').show();
 });
 
-$('#taskTable').on('click', '.edit-task-button', event => {
+//editing a task
+$(document).on('click', '.edit-task-button', event => {
     event.preventDefault();
     let taskStartToEdit = $(event.target).closest('form').find('.task-start').val();
     let date = new Date(taskStartToEdit);
@@ -562,7 +549,8 @@ $('#taskTable').on('click', '.edit-task-button', event => {
 
 })
 
-$('#taskTable').on('click', '.delete-task-button', event => {
+//deleting a task
+$(document).on('click', '.delete-task-button', event => {
     event.preventDefault();
     let taskIdToDelete = $(event.target).closest('form').attr('id');
     //    console.log(taskIdToDelete);
@@ -582,9 +570,21 @@ $('#taskTable').on('click', '.delete-task-button', event => {
 
 })
 
-$('#deleteProjectButton').click(event => {
+//deleting a project
+$(document).on('click', '#deleteProjectButton', event => {
     event.preventDefault();
     let projectIdToDelete = $(event.target).closest('.center').find('.project-summary').attr('id');
     console.log('delete trigger', projectIdToDelete);
     deleteProject(projectIdToDelete);
+})
+
+
+//document ready trigger
+$(function () {
+    $('.hideMe').hide();
+    $('#landingPage').show();
+    $('#landingPageRightSideRegister').show();
+    $('#newProjectStart').datepicker();
+    $('#newTaskStart').datepicker();
+    $('.task-start').datepicker();
 })

@@ -111,6 +111,10 @@ select {
     color: gray;
 }
 
+option {
+    color: black;
+}
+
 button {
     width: 120px;
     border-radius: 20px;
@@ -141,7 +145,7 @@ nav {
 }
 
 nav ul {
-    text-align: justify;
+    text-align: center;
     width: 100%;
 }
 
@@ -160,8 +164,8 @@ nav img {
     height: 30px;
 }
 
-option {
-    color: gray;
+.inline-block {
+    display: inline-block;
 }
 
 .table-headers {
@@ -174,29 +178,28 @@ option {
     margin: 0px 0px 20px 0px
 }
 
-
-/*
-.project td {
-    color: black;
-}
-*/
-
-.inline-block {
-    display: inline-block;
-}
-
 .longer-input {
     width: 300px;
-    color: gray;
 }
 
 .shorter-input {
     width: 130px;
-    color: gray;
 }
 
 .project-order {
     color: white;
+}
+
+.nav1 {
+    float: left;
+}
+
+.nav2, .nav3 {
+    margin-top: 6px;
+}
+
+.nav3 {
+    float: right;
 }
 
 .table-head-mobile {
@@ -240,6 +243,11 @@ option {
     padding: 0px;
 }
 
+.invisible-container div {
+    text-align: center;
+    margin: 5px
+}
+
 .a {
     width: 25%;
 }
@@ -261,7 +269,8 @@ option {
 }
 
 .seamless-form input:hover,
-.seamless-form select:hover {
+.seamless-form select:hover,
+.project:hover {
     cursor: pointer;
 }
 
@@ -273,10 +282,6 @@ option {
 
 .seamless-form input:focus {
     padding: 10px;
-}
-
-.notificationBar {
-    background-color: red;
 }
 
 .mini-button {
@@ -375,11 +380,6 @@ option {
     margin: auto;
 }
 
-.invisible-container div {
-    text-align: center;
-    margin: 5px
-}
-
 @media only screen and (max-width: 550px) {
     #landingPageLeftSide {
         width: 100%;
@@ -412,11 +412,13 @@ option {
     }
     nav ul {
         height: 30px;
-        text-align: center
+        text-align: center;
+        float: none
     }
-    nav li {
+    .nav1, .nav2, .nav3 {
         display: block;
-        margin: 5px
+        float: none;
+        margin: 5px;
     }
     .table-head-mobile {
         display: unset;
