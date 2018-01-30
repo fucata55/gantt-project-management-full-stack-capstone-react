@@ -1,15 +1,15 @@
-
 # Gantt: Plan a better goal
-# Not Just Luck: Banish impostor syndrome for good!
 
 Gantt is a project management software inspired by Henry Gantt that advances a project plan
 
-## Screenshots
-![Landing page screen shot]
-![Account setup screen shot]
-![User homepage screen shot]
-![Achievement timeline screen shot]
-![Skills word cloud screen shot]
+## Screenshot on big and small screens
+![Landing page screenshot](https://github.com/fucata55/gantt-project-management-full-stack-capstone-react/blob/master/assets/images/screenshot-landing.png)
+![Home page screenshot](https://github.com/fucata55/gantt-project-management-full-stack-capstone-react/blob/master/assets/images/screenshot-home.png)
+![Project page screenshot](https://github.com/fucata55/gantt-project-management-full-stack-capstone-react/blob/master/assets/images/screenshot-project.png)
+![Mobile landing page screenshot](https://github.com/fucata55/gantt-project-management-full-stack-capstone-react/blob/master/assets/images/screenshot-landing-mobile.png)
+![Mobile home page screenshot](https://github.com/fucata55/gantt-project-management-full-stack-capstone-react/blob/master/assets/images/screenshot-home-mobile.png)
+![Mobile project page screenshot](https://github.com/fucata55/gantt-project-management-full-stack-capstone-react/blob/master/assets/images/screenshot-project-mobile.png)
+
 
 ## Use Case
 Gantt gives advanced visual representation of tasks in a project
@@ -73,11 +73,29 @@ Gantt was built as two separate parts.
 
 ## API Documentation
 API endpoints for the back end include:
-* not yet included
+* Get a user
+* Get a project
+* Get a task
+* Get projects of a user
+* Get tasks of a project
+* Create a project
+* Create a task
+* Edit a project
+* Edit a task
+* Delete a project
+* Delete a task
 
 ## Development Roadmap
 Planned additional features and improvements will allow users to:
-* will be posted on future uploads
+* Update a project timeline through click and drag on the Gantt chart
+* Update a task timeline through click and drag on the Gantt chart
+* Add more detail to project
+* Add more detail to task
+* Sort and filter projects and tasks by their names, start dates, due dates, periods, or status
+* Open layers of authentication for project managers and team collaboration
+* Assign a project to another user
+* Communicate to other user within the Gantt app either via comment or linked emails
+* Updload files
 
 ## NPM command line
 * npm run build ==> builds the react app into the "build" folder
