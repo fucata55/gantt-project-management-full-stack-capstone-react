@@ -2,7 +2,7 @@
 
 Gantt is a project management software inspired by Henry Gantt that advances a project plan
 
-## Screenshot on big and small screens
+## Screenshots on big and small screens
 ![Landing page screenshot](https://github.com/fucata55/gantt-project-management-full-stack-capstone-react/blob/master/assets/images/screenshot-landing.png)
 ![Home page screenshot](https://github.com/fucata55/gantt-project-management-full-stack-capstone-react/blob/master/assets/images/screenshot-home.png)
 ![Project page screenshot](https://github.com/fucata55/gantt-project-management-full-stack-capstone-react/blob/master/assets/images/screenshot-project.png)
@@ -16,7 +16,7 @@ Gantt gives advanced visual representation of tasks in a project
 
 ## Initial UX
 Ideas
-![UI Flow handwritten draft](https://github.com/fucata55/gantt-project-management-full-stack-capstone/blob/master/ideas.jpg)
+![UI Flow handwritten draft](https://github.com/fucata55/gantt-project-management-full-stack-capstone-react/blob/master/github-images/ideas.jpg)
 User Stories
 As a visitor (not logged in)
 
@@ -24,18 +24,18 @@ As a visitor (not logged in)
 * As a visitor, I want to create a new account so that I can use the app.
 * As a visitor who has already created an account, I want to log in so that I can access my account.
 (LANDING PAGE--wireframe will have title, logo, a few details about logging in and what the app is about)
-![UI Flow handwritten draft](https://github.com/fucata55/gantt-project-management-full-stack-capstone/blob/master/landing-page.jpg)
+![UI Flow handwritten draft](https://github.com/fucata55/gantt-project-management-full-stack-capstone-react/blob/master/github-images/landing-page.jpg)
 
 AS A LOGGED-IN USER
 * As a user, I want to be able to make a new project and see the projects on my home page
-![UI Flow handwritten draft](https://github.com/fucata55/gantt-project-management-full-stack-capstone/blob/master/home.jpg)
+![UI Flow handwritten draft](https://github.com/fucata55/gantt-project-management-full-stack-capstone-react/blob/master/github-images/home.jpg)
 
 * As a user, I want to see graphic/visual representations of my projects tasks
-![UI Flow handwritten draft](https://github.com/fucata55/gantt-project-management-full-stack-capstone/blob/master/project-tasks.jpg)
-![UI Flow handwritten draft](https://github.com/fucata55/gantt-project-management-full-stack-capstone/blob/master/project-gantt-chart.jpg)
+![UI Flow handwritten draft](https://github.com/fucata55/gantt-project-management-full-stack-capstone-react/blob/master/github-images/project-tasks.jpg)
+![UI Flow handwritten draft](https://github.com/fucata55/gantt-project-management-full-stack-capstone-react/blob/master/github-images/project-gantt-chart.jpg)
 
 * As a user, I want to see the information of the developer when I search for the developer
-![UI Flow handwritten draft](https://github.com/fucata55/gantt-project-management-full-stack-capstone/blob/master/contact.jpg)
+![UI Flow handwritten draft](https://github.com/fucata55/gantt-project-management-full-stack-capstone-react/blob/master/github-images/contact.jpg)
 
 ## Working Prototype
 Find a working prototype with Node at https://gantt-project-management.herokuapp.com/
