@@ -38,18 +38,18 @@ export default class Project extends React.Component {
                 </div>
                 <div id="container"></div>
             <form action="" className='project-form' id='newTaskJS'>
-            <input className="longer-input" id='newTaskName' type="text" placeholder="New Pro Players Soccer game" required />
-            <input className="longer-input" id='newTaskPredeccesor' type="text" placeholder="New Bike and Build" required />
-            <input className="shorter-input" id='newTaskDuration' type="number" min='0' placeholder="days" required />
-            <input className="shorter-input" id='newTaskStart' type="text" placeholder="2018-01-20" required />
-            <select name="status" id="newTaskStatus" required>
-            <option value="Planning">Planning</option>
-            <option value="On Going">On Going</option>
-            <option value="Paused">Paused</option>
-            <option value="Canceled">Canceled</option>
-            <option value="Completed">Completed</option>
-            </select>
-            <button type='submit'>+ New Task</button>
+                <input className="longer-input" id='newTaskName' type="text" placeholder="New Pro Players Soccer game" required />
+                <input className="longer-input" id='newTaskPredeccesor' type="text" placeholder="New Bike and Build" required />
+                <input className="shorter-input" id='newTaskDuration' type="number" min='0' placeholder="days" required />
+                <input className="shorter-input" id='newTaskStart' type="text" placeholder="2018-01-20" required />
+                <select name="status" id="newTaskStatus" required>
+                    <option value="Planning">Planning</option>
+                    <option value="On Going">On Going</option>
+                    <option value="Paused">Paused</option>
+                    <option value="Canceled">Canceled</option>
+                    <option value="Completed">Completed</option>
+                </select>
+                <button type='submit'>+ New Task</button>
             </form>
                     <table id='taskTable'>
                         <thead>

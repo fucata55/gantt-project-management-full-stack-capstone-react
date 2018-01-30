@@ -39,11 +39,11 @@ AS A LOGGED-IN USER
 
 ## Working Prototype
 Find a working prototype with Node at https://gantt-project-management.herokuapp.com/
-Find a working prototype with React front end at (no link yet)
+Find a working prototype with React front end at https://fucata55.github.io/gantt-project-management-full-stack-capstone-react/build
 
 
 ## Technical
-Not Just Luck was built as two separate parts.
+Gantt was built as two separate parts.
 
 <h3>Front End</h3>
 <ul>

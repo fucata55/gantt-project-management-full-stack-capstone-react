@@ -65026,9 +65026,6 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	(0, _enzyme.configure)({ adapter: new _enzymeAdapterReact2.default() });
-	//$('html,body').animate({
-	//    scrollTop: $('#appDescription').offset().top
-	//}, 'slow');
 	
 	function Landing(props) {
 	    return _react2.default.createElement(
@@ -65082,6 +65079,11 @@
 	                    _react2.default.createElement(
 	                        'p',
 	                        null,
+	                        'For demo, sign in with user demo4 and password 1234'
+	                    ),
+	                    _react2.default.createElement(
+	                        'p',
+	                        null,
 	                        'Already have an account?'
 	                    ),
 	                    _react2.default.createElement(
@@ -65118,6 +65120,11 @@
 	                        'button',
 	                        null,
 	                        'Submit'
+	                    ),
+	                    _react2.default.createElement(
+	                        'p',
+	                        null,
+	                        'For demo, sign in with user demo4 and password 1234'
 	                    ),
 	                    _react2.default.createElement(
 	                        'p',
