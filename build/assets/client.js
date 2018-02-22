@@ -159,21 +159,21 @@ let renderATask = (newTask) => {
     $('#taskTable tr:last').after(`
 <tr class='task-row'>
 <td colspan='7'>
-<form action="" class='project-form seamless-form task' id='${newTask._id}'>
-<input class="longer-input a task-name" type="text" value='${newTask.taskName}' required>
-<input class="longer-input b task-predeccesor" type="text" value='${newTask.taskPredeccesor}' required>
-<input class="shorter-input c task-duration" type="text" value='${newTask.taskDuration}' required>
-<input class="shorter-input d task-start" type="text" value='${newTask.taskStart}' required>
-<input class="shorter-input d task-end" type="text" value='${newTask.taskEnd}' readonly>
-<select name="status" class='task-status' required>
-<option value="Planning">Planning</option>
-<option value="On Going">On Going</option>
-<option value="Paused">Paused</option>
-<option value="Canceled">Canceled</option>
-<option value="Completed">Completed</option>
+<form action='' class='project-form seamless-form task' id='${newTask._id}'>
+<input class='longer-input a task-name' type='text' value='${newTask.taskName}' required>
+<input class='longer-input b task-predeccesor' type='text' value='${newTask.taskPredeccesor}' required>
+<input class='shorter-input c task-duration' type='text' value='${newTask.taskDuration}' required>
+<input class='shorter-input d task-start' type='text' value='${newTask.taskStart}' required>
+<input class='shorter-input d task-end' type='text' value='${newTask.taskEnd}' readonly>
+<select name='status' class='task-status' required>
+<option value='Planning'>Planning</option>
+<option value='On Going'>On Going</option>
+<option value='Paused'>Paused</option>
+<option value='Canceled'>Canceled</option>
+<option value='Completed'>Completed</option>
 </select>
-<button class='mini-button edit-task-button'><img src="assets/images/edit-icon.png" alt=""></button>
-<button class='mini-button delete-task-button' id='deleteButton'><img src="assets/images/trash-icon.png" alt="trash"></button>
+<button class='mini-button edit-task-button'><img src='assets/images/edit-icon.png' alt=''></button>
+<button class='mini-button delete-task-button' id='deleteButton'><img src='assets/images/trash-icon.png' alt='trash'></button>
 </form>
 </td>
 </tr>
@@ -288,7 +288,7 @@ $(document).on('click', '.scroll-js', function () {
 
 //registering
 $(document).on('submit', '.register-form', function (event) {
-    //if the page refreshes when you submit the form use "preventDefault()" to force JavaScript to handle the form submission
+    //if the page refreshes when you submit the form use 'preventDefault()' to force JavaScript to handle the form submission
     event.preventDefault();
     let registeredUser = $('#registeredUser').val();
     let registeredPassword = $('#registeredPassword').val();

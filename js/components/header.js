@@ -15,10 +15,10 @@ export default function Header(props) {
             <nav>
                 <ul>
                     <li className='nav1'>
-                        <a id='navigateHome' href="#"><img src="assets/images/gantt-logo.png" alt="Gantt logo" /></a>
+                        <a id='navigateHome' href='#'><img src='assets/images/gantt-logo.png' alt='Gantt logo' /></a>
                     </li>
                     <li className='nav2'>Hello, <span className='user-name'>Henry</span>!</li>
-                    <li className='nav3'><a id='signout' href="">Sign out</a></li>
+                    <li className='nav3'><a id='signout' href=''>Sign out</a></li>
                 </ul>
             </nav>
         </header>

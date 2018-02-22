@@ -47,8 +47,8 @@ Gantt was built as two separate parts.
 
 <h3>Front End</h3>
 <ul>
-    <li>HTML5</li>
-    <li>CSS3</li>
+    <li>HTML</li>
+    <li>CSS</li>
     <li>JavaScript</li>
     <li>jQuery</li>
     <li>React</li>

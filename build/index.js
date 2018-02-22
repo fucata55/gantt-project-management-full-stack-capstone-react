@@ -76,12 +76,6 @@
 	
 	var render = _reactDom2.default.render;
 	
-	// import '../assets/css/main.css';
-	
-	//import Description from '../js/components/description';
-	//import Register from '../js/components/register';
-	//import SignIn from '../js/components/sign-in';
-	
 	
 	document.addEventListener('DOMContentLoaded', function () {
 	    return _reactDom2.default.render(_react2.default.createElement(_header2.default, null), document.getElementById('reactHeader'));
@@ -98,18 +92,6 @@
 	document.addEventListener('DOMContentLoaded', function () {
 	    return _reactDom2.default.render(_react2.default.createElement(_project2.default, null), document.getElementById('reactProjectSection'));
 	});
-	
-	//document.addEventListener('DOMContentLoaded', () =>{
-	//    return ReactDOM.render(<Description />,document.getElementById('reactDescription'));
-	//} );
-	//
-	//document.addEventListener('DOMContentLoaded', () =>{
-	//    return ReactDOM.render(<Register />,document.getElementById('reactRegister'));
-	//} );
-	//
-	//document.addEventListener('DOMContentLoaded', () =>{
-	//    return ReactDOM.render(<SignIn />,document.getElementById('reactSignIn'));
-	//} );
 
 /***/ }),
 /* 1 */
@@ -65124,7 +65106,12 @@
 	                    _react2.default.createElement(
 	                        'p',
 	                        null,
-	                        'For demo, sign in with user demo4 and password 1234'
+	                        'Demo Username: demo4'
+	                    ),
+	                    _react2.default.createElement(
+	                        'p',
+	                        null,
+	                        'Demo Password: 1234'
 	                    ),
 	                    _react2.default.createElement(
 	                        'p',
@@ -65151,19 +65138,19 @@
 	            _react2.default.createElement(
 	                'p',
 	                null,
-	                'Gantt is a project management software inspired by Henry Gantt to advances visual representation of porject plans. By implementing Gantt chart to your project management, you will have a better focus on the project most crucial constraint, time frame, and a greate tool to communicate your plan'
+	                'Gantt is a project management software inspired by Henry Gantt to advances the visual representation of a project plan. By implementing Gantt chart into a project management process, the project manager will have a better focus on the project most crucial constraint, time frame, and a greater tool to communicate the plan'
 	            ),
 	            _react2.default.createElement('br', null),
 	            _react2.default.createElement(
 	                'h2',
 	                null,
-	                'Why should I care?'
+	                'Why care?'
 	            ),
 	            _react2.default.createElement('br', null),
 	            _react2.default.createElement(
 	                'p',
 	                null,
-	                'As a writer called called Antoine de Saint-Exuperty who became a laureate of several of France\'s highest literary awards and a winner of the U.S. National Book Award once saif, "A goal without a plan is just a wish." Or, as the famous Founding Father of the United States, Benjamin Franklin, said "By failing to prepare, you are preparing to fail."'
+	                'As a writer called called Antoine de Saint-Exuperty who became a laureate of several of France\'s highest literary awards and a winner of the U.S. National Book Award once saif, \'A goal without a plan is just a wish.\' Or, as the famous Founding Father of the United States, Benjamin Franklin, said \'By failing to prepare, you are preparing to fail.\''
 	            ),
 	            _react2.default.createElement(
 	                'p',

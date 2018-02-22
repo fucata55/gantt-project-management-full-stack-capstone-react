@@ -17,17 +17,17 @@ export default class Home extends React.Component {
     render() {
         return (
             <section id='homePage' className='hideMe'>
-                <form action="" className='project-form' id='newProjectJS'>
-                    <input className="longer-input" id='newProjectName' type="text" placeholder="New project name" required />
-                    <input className="longer-input" id='newProjectPredeccesor' type="text" placeholder="New project predeccesor" required />
-                    <input className="shorter-input" id='newProjectDuration' type="number" min='0' placeholder="Days" required />
-                    <input className="shorter-input" id='newProjectStart' type="text" placeholder="Start date" required />
-                    <select name="status" id="status" required>
-                    <option value="Planning">Planning</option>
-                        <option value="On Going">On Going</option>
-                        <option value="Paused">Paused</option>
-                        <option value="Canceled">Canceled</option>
-                        <option value="Completed">Complete</option>
+                <form action='' className='project-form' id='newProjectJS'>
+                    <input className='longer-input' id='newProjectName' type='text' placeholder='New project name' required />
+                    <input className='longer-input' id='newProjectPredeccesor' type='text' placeholder='New project predeccesor' required />
+                    <input className='shorter-input' id='newProjectDuration' type='number' min='0' placeholder='Days' required />
+                    <input className='shorter-input' id='newProjectStart' type='text' placeholder='Start date' required />
+                    <select name='status' id='status' required>
+                    <option value='Planning'>Planning</option>
+                        <option value='On Going'>On Going</option>
+                        <option value='Paused'>Paused</option>
+                        <option value='Canceled'>Canceled</option>
+                        <option value='Completed'>Complete</option>
                     </select>
                     <button type='submit'>+ New Project</button>
                 </form>
