@@ -27,7 +27,8 @@ export default function Landing(props) {
                             <input id='registeredPassword' type='password' placeholder='Password' required />
                             <input id='registeredConfirmPassword' type='password' placeholder='Confirm password' required />
                             <button>Submit</button>
-                            <p>For demo, sign in with user demo4 and password 1234</p>
+                            <p>Demo Username: demo4</p>
+                            <p>Demo Password: 1234</p>
                             <p>Already have an account?</p>
                             <a className='navigate-signin-link' href=''>Click here to sign in</a>
                         </form>
