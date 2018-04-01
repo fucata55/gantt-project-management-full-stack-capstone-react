@@ -65061,16 +65061,6 @@
 	                    _react2.default.createElement(
 	                        'p',
 	                        null,
-	                        'Demo Username: demo4'
-	                    ),
-	                    _react2.default.createElement(
-	                        'p',
-	                        null,
-	                        'Demo Password: 1234'
-	                    ),
-	                    _react2.default.createElement(
-	                        'p',
-	                        null,
 	                        'Already have an account?'
 	                    ),
 	                    _react2.default.createElement(
